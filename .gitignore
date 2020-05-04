@@ -4,7 +4,7 @@
 **/e2e
 **/.vscode
 **/node_modules
-**composer.lock
+# **composer.lock
 *.zip
 # api
 **/node_modules
