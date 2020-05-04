@@ -6,6 +6,7 @@
 **/node_modules
 **composer.lock
 *.zip
+/public
 # api
 **/node_modules
 /vendor
