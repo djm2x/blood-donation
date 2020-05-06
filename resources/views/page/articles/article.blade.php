@@ -1,11 +1,9 @@
 @extends('master')
 
-@section('entete')
-@stop
 
 
 @section('title')
-    <h1>{{$model->title}}</h1>
+    {{$model ? $model->title : 'Pas de titre'}}
 @stop
 
 @section('content')
@@ -23,12 +21,13 @@
 
     <div class="container mt-5 mb-5 mt-5">
         <div class="d-flex flex-wrap justify-content-center align-items-center">
-            <div class="col-md-12 mb-5 d-flex justify-content-center align-items-center">
+            {{-- <div class="col-md-12 mb-5 d-flex justify-content-center align-items-center">
                 <img src="{{url('presidents/'.str_replace(';', '', $model->imageUrl))}}"
                 class="card-img-top" alt="..." style="width: 200px">
-            </div>
+            </div> --}}
             <div class="col-md-12">
-                {!! $model->description !!}
+                {!! $model ? $model->description : 'Le contenu est pas encore publié.' !!}
+               
             </div>
         </div>
 

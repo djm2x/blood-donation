@@ -8,6 +8,8 @@ Route::get('', 'HomeController@index')->name('home');
 Route::get('/activite', 'ActiviteController@list')->name('activite');
 Route::get('/activite/{id}', 'ActiviteController@detail')->name('detail-activite');
 
+// a propos
+Route::get('/article/{name}', 'PresidentController@page');
 
 Route::get('/planification', 'PlanificationController@page')->name('planification');
 Route::get('/president', 'PresidentController@list')->name('president');

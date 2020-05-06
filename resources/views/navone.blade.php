@@ -51,45 +51,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarMobile">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="{{ request()->is('/') ? 'nav-link home active' : 'nav-link home' }}" href="{{ route('home') }}">
-                            <i  class="fas fa-home d-none d-md-block"></i>
-                            <span class="d-sm-none">Accueil</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            c n t s h
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="{{ request()->is('president') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ route('president') }}">Mot du président</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="{{ request()->is('blog') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ route('blog') }}">Blog</a>
-                        {{-- <a class="dropdown-item" href="{{ route('blog') }}">{{ request()->routeIs('activite') == 1 ? 'yes' : 'no' }}</a>
-                        <a class="dropdown-item" href="{{ route('blog') }}">{{ (request()->is('activite')) ? 'yes' : 'no' }}</a> --}}
-                    </div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="{{ request()->is('planification') ? 'nav-link active' : 'nav-link' }}" href="{{ route('planification') }}">Don du song</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="{{ request()->is('activite') ? 'nav-link active' : 'nav-link' }}" href="{{ route('activite') }}">Nos Activiés</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="{{ request()->is('galerie') ? 'nav-link active' : 'nav-link' }}" href="{{ route('galerie') }}">Galerie</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="{{ request()->is('contact') ? 'nav-link active' : 'nav-link' }}" href="{{ route('contact') }}">Contact</a>
-                    </li>
-
-                    {{-- <li class="nav-item ml-3">
-                        <a class="btn btn-warning" href="{{ route('admin') }}">Back-office</a>
-                    </li> --}}
-                </ul>
+                @include('nav-shared')
             </div>
 
 
@@ -114,45 +76,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="{{ request()->is('/') ? 'nav-link home active' : 'nav-link home' }}" href="{{ route('home') }}">
-                            <i  class="fas fa-home d-none d-md-block"></i>
-                            <span class="d-sm-none">Accueil</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            c n t s h
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="{{ request()->is('president') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ route('president') }}">Mot du président</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="{{ request()->is('blog') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ route('blog') }}">Blog</a>
-                        {{-- <a class="dropdown-item" href="{{ route('blog') }}">{{ request()->routeIs('activite') == 1 ? 'yes' : 'no' }}</a>
-                        <a class="dropdown-item" href="{{ route('blog') }}">{{ (request()->is('activite')) ? 'yes' : 'no' }}</a> --}}
-                    </div>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="{{ request()->is('planification') ? 'nav-link active' : 'nav-link' }}" href="{{ route('planification') }}">Don du song</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="{{ request()->is('activite') ? 'nav-link active' : 'nav-link' }}" href="{{ route('activite') }}">Nos Activiés</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="{{ request()->is('galerie') ? 'nav-link active' : 'nav-link' }}" href="{{ route('galerie') }}">Galerie</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="{{ request()->is('contact') ? 'nav-link active' : 'nav-link' }}" href="{{ route('contact') }}">Contact</a>
-                    </li>
-
-                    {{-- <li class="nav-item ml-3">
-                        <a class="btn btn-warning" href="{{ route('admin') }}">Back-office</a>
-                    </li> --}}
-                </ul>
+                @include('nav-shared')
             </div>
         </nav>
     </div>

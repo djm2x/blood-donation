@@ -17,7 +17,7 @@ class CreatePresidentsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('description');
-            $table->dateTime('date');
+            $table->dateTime('date')->nullable(true);
             $table->string('imageUrl');
 
             // $table->integer('idRegion')->nullable(true);

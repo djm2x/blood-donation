@@ -66,7 +66,7 @@ export class UpdateComponent implements OnInit {
       title: [this.o.title, Validators.required],
       description: [this.o.description, Validators.required],
       date: [this.o.date, Validators.required],
-      imageUrl: [this.o.imageUrl, Validators.required],
+      imageUrl: [this.o.imageUrl],
       // idRegion: [this.session.user.idRegion, Validators.required],
       // idUser: [this.session.user.id, Validators.required],
     });

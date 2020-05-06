@@ -36,6 +36,10 @@
         @yield('content')
     </main>
 
+    {{-- @foreach(Session::get('cntsh') as $e)
+        {{$e}}
+        @endforeach --}}
+
     <footer>
         @include('footer')
     </footer>
