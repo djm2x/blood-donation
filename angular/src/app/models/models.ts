@@ -83,3 +83,9 @@ export class Galerie {
   date = new Date();
   imageUrl = '';
 }
+
+export class NewsLetter {
+  id = 0;
+  email = '';
+  date = new Date();
+}

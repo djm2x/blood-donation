@@ -31,8 +31,13 @@
                                 {{date('d-m-Y', strtotime($e->date))}}
                             </p>
                             <div class="d-flex d-flex flex-row-reverse mt-3">
-                                <a class=" text-uppercase"  href="detail-galerie/{{$e->id}}">plus d'info...</a>
+                                <a class="btn btn-danger text-uppercase"  href="detail-galerie/{{$e->id}}">plus d'info...</a>
                             </div>
+
+                            {{-- <div class="d-flex justify-content-between align-items-center mt-3">
+                                <a class="btn btn-danger text-uppercase"  href="activite/${e.id}">plus d'info...</a>
+                                <div class="d-flex text-dark social"> </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

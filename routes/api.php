@@ -63,8 +63,21 @@ Route::group(['middleware' => 'auth.jwt'], function () {
 
     //contacts
     Route::get('/contacts/getList/{startIndex}/{pageSize}/{sortBy}/{sortDir}', 'ContactController@getList');
-    Route::apiResource('contacts', 'ContactController');
+    // Route::apiResource('contacts', 'ContactController');
+    Route::get('/contacts/{id}', 'ContactController@show');
+    Route::delete('/contacts/{id}', 'ContactController@destroy');
+    Route::put('/contacts/{id}', 'ContactController@update');
+
+    // news letter
+    Route::get('/newsLetter/getList/{startIndex}/{pageSize}/{sortBy}/{sortDir}', 'NewsLetterController@getList');
+    // Route::apiResource('newsLetter', 'NewsLetterController');
+    Route::get('/newsLetter/{id}', 'NewsLetterController@show');
+    Route::delete('/newsLetter/{id}', 'NewsLetterController@destroy');
+    Route::put('/newsLetter/{id}', 'NewsLetterController@update');
 });
+
+Route::post('/contacts', 'ContactController@store');
+Route::post('/newsLetter', 'NewsLetterController@store');
 
 //activite
 Route::get('/activites/listApi/{startIndex}/{pageSize}/{idRegion}/{dateOrderDir}', 'ActiviteController@listApi');

@@ -36,8 +36,8 @@
 
 
     <div class="container">
-        <div class="row d-flex justify-content-center p-2" style="">
-
+        <div class="d-flex mt-4 mb-3" style="">
+            <h3>{{$model->title}}, {{date('d-m-Y', strtotime($model->date))}}</h3>
         </div>
         <div id="carouselExampleCaptions4" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner ">

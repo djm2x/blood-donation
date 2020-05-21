@@ -56,10 +56,10 @@ export class LoaderInterceptor implements HttpInterceptor {
           if (err instanceof HttpErrorResponse) {
             if (err.status === 401 || err.status === 403) {
               // this.toast.toastError(err.status); // , err.statusText);
-              this.snackBar.notifyAlert(`${err.status}: ${err.statusText}`);
+              // this.snackBar.notifyAlert(`${err.status}: ${err.statusText}`);
               console.log(err.status, err.statusText);
-              // this.session.doSignOut();
-              // this.router.navigate(['auth/login']);
+              this.session.doSignOut();
+              this.router.navigate(['auth/login']);
             } else {
               console.log(err);
               // this.toast.toastError(err.error);

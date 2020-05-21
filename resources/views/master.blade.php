@@ -28,7 +28,7 @@
         @if (!request()->is('/'))
             <section class="title d-flex align-items-center">
                 <div class="container">
-                    <h2>@yield('title')</h2>
+                    <h2 class="m-0">@yield('title')</h2>
                 </div>
             </section>
         @endif

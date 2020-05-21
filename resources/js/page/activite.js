@@ -92,14 +92,13 @@ function populate(data) {
                         <div class="card m-1" style="width: 18rem;">
                             <img src="activites/${e.imageUrl.replace(';', '')}" onerror="this.onerror=null;this.src='images/verts.png';" class="card-img-top" alt="...">
                             <div class="card-body">
-                            <p class="card-text m-0 text-dark font-weight-bold">${e.title}</p>
+                                <p class="card-text m-0 text-dark font-weight-bold">${e.title}</p>
                                 <p class="card-text m-0 text-dark text-muted">
-                                ${e.description.substring(0, 50)} ...
+                                    ${e.description.substring(0, 50)} ...
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center mt-3">
                                     <a class="btn btn-danger text-uppercase"  href="activite/${e.id}">plus d'info...</a>
-                                    <div class="d-flex text-dark social">
-                                    </div>
+                                    <div class="d-flex text-dark social"> </div>
                                 </div>
                             </div>
                         </div>

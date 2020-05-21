@@ -12,6 +12,7 @@ import { PlanificationService } from './planification.service';
 import { GalerieService } from './galerie.service';
 import { BlogService } from './blog.service';
 import { ContactService } from './contact.service';
+import { SuperService } from './super.service';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,7 @@ export class UowService {
   users = new UserService();
   roles = new RoleService();
   accounts = new AccountService();
+  newsLetters = new SuperService('newsLetter');
 
   profils = [
     { id: 1, name: 'Role1', },

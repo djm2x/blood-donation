@@ -29,7 +29,7 @@ class SuperController extends Controller
             ->get()
             ;
 
-        $count = $this->_context->get()->count();
+        $count = $this->_context->count();
 
         return ['list' => $list, 'count' => $count];
     }

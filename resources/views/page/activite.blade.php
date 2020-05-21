@@ -44,7 +44,7 @@
             <div class="d-flex justify-content-center align-items-center mb-5">
                 <span class="d-none d-md-block">element par page&nbsp;:&nbsp;</span>
                 <select class="form-control" id="pageSize" style="width:75px">
-                    <option value="6">6 </option>
+                    {{-- <option value="6">6 </option> --}}
                     <option value="12">12 </option>
                     <option value="24">24 </option>
                     <option value="50">50 </option>

@@ -16,6 +16,7 @@ const routes: Routes = [
       { path: 'blog', loadChildren: () => import('./blog/shared.module').then(m => m.SharedModule), },
       { path: 'galerie', loadChildren: () => import('./galerie/shared.module').then(m => m.SharedModule), },
       { path: 'contact', loadChildren: () => import('./contact/contact.module').then(m => m.MessageModule), },
+      { path: 'news-letter', loadChildren: () => import('./news-letter/news-letter.module').then(m => m.NewsLetterModule), },
       { path: 'region', loadChildren: () => import('./region/region.module').then(m => m.RegionModule), },
       { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule), },
       // { path: 'role', loadChildren: () => import('./role/role.module').then(m => m.RoleModule), },

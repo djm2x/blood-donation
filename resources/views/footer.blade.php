@@ -46,12 +46,18 @@
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, dolore magna aliqua. Ut enim ad minim veniam</p>
 
-            <form class="form-inline">
-                <div class="form-group  mb-2">
-                  <input type="text" class="form-control" id="inputPassword2" placeholder="Entrer votre email">
+            <form id="newletterForm" class="form-inline">
+                <div class="input-group mb-2">
+                    {{-- <div class="input-group-prepend">
+                      <div class="input-group-text">@</div>
+                    </div> --}}
+                    <input type="email" class="form-control" id="newletterEmail" placeholder="Email">
+                    <div class="input-group-prepend">
+                        <button type="submit" class="btn btn-success mb-2 text-uppercase" style="border-radius: 0 5px 5px 0">subscribe</button>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-success mb-2 text-uppercase">subscribe</button>
-              </form>
+            </form>
+            <span id="msg"></span>
         </div>
     </div>
 </div>
@@ -71,3 +77,35 @@
     </div>
 
 </section>
+
+
+
+    <script>
+        const newletterForm = document.getElementById('newletterForm');
+        const msg = document.getElementById('msg');
+
+        newletterForm.addEventListener('submit', async e => {
+
+            e.preventDefault();
+
+            const o = {
+                email: document.getElementById('newletterEmail').value,
+                date: new Date(),
+            }
+
+            console.log(o);
+
+            try {
+                msg.innerHTML = "en cours d'envois ...";
+                const r = await axios.post('/api/newsLetter', o);
+                console.log(r);
+                msg.innerHTML = "Email enregister";
+
+                setTimeout(() => msg.innerHTML = '', 4000);
+
+            } catch (e) {
+                e.response ? console.warn(e.response.data) : console.warn(e);
+            }
+        });
+    </script>
+
