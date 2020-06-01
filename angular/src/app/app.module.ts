@@ -13,7 +13,9 @@ import { InjectService } from './inject.service';
 import { AppRoutingModule } from './app-routing.module';
 import { MessageComponent } from './shared/snakebar.service';
 import { LoaderInterceptor } from './loader/loader-interceptor';
-import { MatDialogRef, MAT_DIALOG_DATA, MAT_DATE_LOCALE } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA, MAT_DATE_LOCALE
+  , MatToolbarModule, MatProgressSpinnerModule, MatDividerModule
+  , MatButtonModule, MatSnackBarModule, MatDialogModule } from '@angular/material';
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -26,12 +28,18 @@ import { ToastrModule } from 'ngx-toastr';
     DeleteComponent
   ],
   imports: [
-    ReactiveFormsModule,
+    // ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MatModule,
-    FormsModule,
+    // MatModule,
+    MatToolbarModule,
+    MatProgressSpinnerModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    // FormsModule,
     BrowserAnimationsModule,
     LoaderModule,
     ToastrModule.forRoot(),
