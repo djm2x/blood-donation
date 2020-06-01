@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'activite', pathMatch: 'full'},
 
-      { path: 'president', loadChildren: () => import('./president/shared.module').then(m => m.SharedModule), },
+      { path: 'article', loadChildren: () => import('./president/shared.module').then(m => m.SharedModule), },
       { path: 'planification', loadChildren: () => import('./planification/shared.module').then(m => m.SharedModule), },
       { path: 'activite', loadChildren: () => import('./activite/activite.module').then(m => m.ActiviteModule), },
       { path: 'blog', loadChildren: () => import('./blog/shared.module').then(m => m.SharedModule), },

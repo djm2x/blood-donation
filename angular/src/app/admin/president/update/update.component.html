@@ -18,7 +18,7 @@
           [eventSubmitToParent]="imageFrom" [eventSubmitFromParent]="eventSubmitFromParent">
         </app-upload-image>
 
-        <angular-editor formControlName="description" [config]="config"></angular-editor>
+        <angular-editor (ngModelChange)="onChange($event)" formControlName="description" [config]="config"></angular-editor>
 
 
       </form>

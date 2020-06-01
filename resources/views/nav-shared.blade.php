@@ -16,9 +16,9 @@
             
             {{-- <a class="{{ request()->is($e->route) ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ route($e->route) }}">{{$e->name}}</a> --}}
             {{-- <div class="dropdown-divider"></div> --}}
-            <a class="{{ request()->is('blog') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ route('blog') }}">Diagramme</a>
+            <a class="{{ request()->is('article/diagramme') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/diagramme') }}">Diagramme</a>
             <a class="{{ request()->is('article/missions') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/missions') }}">Missions</a>
-            <a class="{{ request()->is('president') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/missions') }}">Mot du directeur</a>
+            <a class="{{ request()->is('article/directeur') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/directeur') }}">Mot du directeur</a>
             <a class="{{ request()->is('article/article/reseau') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/reseau') }}">Réseau national</a>
             <a class="{{ request()->is('article/gouvernance') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/gouvernance') }}">Gouvernance</a>
             <a class="{{ request()->is('article/histoire') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/histoire') }}">Histoire</a>
@@ -34,8 +34,8 @@
         </a>
         {{-- <a class="{{ request()->is('planification') ? 'nav-link active' : 'nav-link' }}" href="{{ route('planification') }}">Don du song</a> --}}
         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-            <a class="{{ request()->is('article/produit') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/produit') }}">Produit sanguins</a>
             <a class="{{ request()->is('article/quoi') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/quoi') }}">Le sang, c'est quoi</a>
+            <a class="{{ request()->is('article/produit') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/produit') }}">Produit sanguins</a>
             <a class="{{ request()->is('article/hemovigilance') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/hemovigilance') }}">Hemovigilance</a>
             <a class="{{ request()->is('article/cout') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/cout') }}">Cout de prestation</a>
             <a class="{{ request()->is('article/situation') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/situation') }}">Situation nationale de don de sang</a>
@@ -66,10 +66,10 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
             <a class="{{ request()->is('planification') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ route('planification') }}">Planification</a>
             <a class="{{ request()->is('article/Pourquoi') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/Pourquoi') }}">Pourquoi donner du sang?</a>
-            <a class="{{ request()->is('article/qui') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/qui') }}">Qui peut deonner du sang?</a>
+            <a class="{{ request()->is('article/qui') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/qui') }}">Qui peut donner du sang?</a>
             <a class="{{ request()->is('article/informations') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/informations') }}">Informations post-don</a>
             <a class="{{ request()->is('article/promesse') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/promesse') }}">Faire une promesse de don</a>
-            <a class="{{ request()->is('article/donner') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/donner') }}">Ou donner son sang</a>
+            <a class="{{ request()->is('article/ou-donner') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/ou-donner') }}">Ou donner son sang</a>
             <a class="{{ request()->is('article/faq') ? 'dropdown-item active' : 'dropdown-item' }}" href="{{ url('article/faq') }}">FAQ</a>
         </div>
     

@@ -27,6 +27,8 @@ Route::get('/home/list', 'HomeController@testApi');
 
 // FILES UPLOAD
 
+Route::post('/files/angEditorUploadImage/{folder}', 'FilesController@angEditorUploadImage');
+
 Route::post('/files/uploadFiles/{folder}', 'FilesController@uploadFiles');
 Route::post('/files/deleteFiles', 'FilesController@deleteFiles');
 

@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use File;
+use Illuminate\Support\Facades\URL;
 
 class FilesController extends Controller
 {
@@ -30,6 +31,47 @@ class FilesController extends Controller
         } else {
             return response()->json(["message" => "Select image first."]);
         }
+    }
+
+    public function angEditorUploadImage(Request $request, string $folder) // : Collection
+    {
+        $file = $request->file('file');
+        // $uploaddir = 'img/';
+        $filename = $file->getClientOriginalName();
+        // $destination_path = $uploaddir;
+
+        if ($file->move(public_path($folder), $filename)) {
+            return json_encode($this->addImage($folder, $filename));
+        }
+        else{
+             return json_encode(['response' => 'error']);
+
+        }
+    }
+
+    public function addImage($folder, $filename)
+    {
+        $path = request()->getSchemeAndHttpHost().'/'.$folder.'/'.$filename;
+        
+        // if (Image::create(['name'=>$filename, 'path'=>$path])) {
+
+        //     return [
+        //         'status' => true,
+        //         'originalName' => $filename,
+        //         'generatedName' => $filename,
+        //         'msg'=>"Image upload successful",
+        //         'imageUrl' => $path
+        //     ];
+        // }
+        // return ['response'=>'error'];
+
+        return [
+            // 'status' => true,
+            // 'originalName' => $filename,
+            // 'generatedName' => $filename,
+            // 'msg'=>"Image upload successful",
+            'imageUrl' => $path
+        ];
     }
 
 

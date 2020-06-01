@@ -24,6 +24,8 @@ class PresidentController extends SuperController
         //     return view("notfound");
         // }
 
+        $article = str_replace('-', ' ', $article);
+
         $q = $this->_context
             ->where('title', 'LIKE', "%{$article}%")
             // ->whereRaw("title like  '%$article%'")

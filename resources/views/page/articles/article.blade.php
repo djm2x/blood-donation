@@ -7,28 +7,42 @@
 @stop
 
 @section('content')
+
+<style>
+    @media screen and (max-width: 844px) {
+        .with-image img{
+            width: 80%;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .with-image img{
+            width: 100%;
+        }
+    }
+</style>
     {{-- {{$list}} --}}
 <section class="president">
-    {{-- <div class="wallpaper" style="background-image: url('{{url('presidents/'.str_replace(';', '', $model->imageUrl))}}');">
-        <div class="para d-flex flex-column align-items-center mt-5">
-            <p class="text-danger h2 font-weight-bold anime">{{$model->title}}</p>
-
-            <div class="progress">
-                <div class="progress-bar bg-danger" role="progressbar"  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-        </div>
-    </div> --}}
 
     <div class="container mt-5 mb-5 mt-5">
         <div class="d-flex flex-wrap justify-content-center align-items-center">
-            {{-- <div class="col-md-12 mb-5 d-flex justify-content-center align-items-center">
-                <img src="{{url('presidents/'.str_replace(';', '', $model->imageUrl))}}"
-                class="card-img-top" alt="..." style="width: 200px">
-            </div> --}}
-            <div class="col-md-12">
-                {!! $model ? $model->description : 'Le contenu est pas encore publié.' !!}
-               
+            @if(request()->is('article/gouvernance'))
+                <div class="col-md-12 mb-5">
+                    <img src="{{url('presidents/'.str_replace(';', '', $model->imageUrl))}}" onerror="this.onerror=null;this.src='/images/verts.png';"
+                                                class="card-img-top w-100" alt="{{$model->imageUrl}}">
+                </div>
+            @endif
+            
+            <div class="col-md-12 with-image">
+                {!! $model ? str_replace('http://localhost:8000', request()->getSchemeAndHttpHost(), $model->description) : 'Le contenu est pas encore publié.' !!}
             </div>
+
+            @if(request()->is('article/reseau'))
+                <div class="col-md-12 mt-5">
+                    <img src="{{url('presidents/'.str_replace(';', '', $model->imageUrl))}}" onerror="this.onerror=null;this.src='/images/verts.png';"
+                    class="card-img-top w-100" alt="{{$model->imageUrl}}">
+                </div>
+            @endif
         </div>
 
     </div>

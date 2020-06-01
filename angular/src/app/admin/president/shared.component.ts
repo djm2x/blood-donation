@@ -78,7 +78,7 @@ export class SharedComponent implements OnInit {
   }
 
   add() {
-    this.openDialog(new Activite(), 'Ajouter Mot de président').subscribe(result => {
+    this.openDialog(new Activite(), 'Ajouter article').subscribe(result => {
       if (result) {
         this.update.next(true);
       }
@@ -86,7 +86,7 @@ export class SharedComponent implements OnInit {
   }
 
   edit(o: Activite) {
-    this.openDialog(o, 'Modifier Mot de président').subscribe((result: Activite) => {
+    this.openDialog(o, `Modifier ${o.title}`).subscribe((result: Activite) => {
       if (result) {
         this.update.next(true);
       }

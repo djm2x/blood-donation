@@ -27,7 +27,7 @@ export class UploadImageComponent implements OnInit {
 
   ngOnInit() {
     this.propertyOfParent.subscribe((r: string) => {
-      const l = r.split(';');
+      const l = r ? r.split(';') : [];
 
       l.pop();
 

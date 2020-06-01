@@ -6,6 +6,7 @@ import { Blog } from 'src/app/models/models';
 import { Subject } from 'rxjs';
 import { SessionService } from 'src/app/shared';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { editorConfig } from '../../angular-editor';
 
 @Component({
   selector: 'app-update',
@@ -16,7 +17,7 @@ export class UpdateComponent implements OnInit {
   myForm: FormGroup;
   o: Blog;
   title = '';
-  config = this._config;
+  config = editorConfig;
 
   folderToSaveInServer = 'blogs';
 

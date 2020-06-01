@@ -6,6 +6,7 @@ import { President } from 'src/app/models/models';
 import { Subject } from 'rxjs';
 import { SessionService } from 'src/app/shared';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { editorConfig } from '../../angular-editor';
 
 @Component({
   selector: 'app-update',
@@ -16,7 +17,7 @@ export class UpdateComponent implements OnInit {
   myForm: FormGroup;
   o: President;
   title = '';
-  config = this._config;
+  config = editorConfig;
 
   folderToSaveInServer = 'presidents';
 
@@ -34,6 +35,8 @@ export class UpdateComponent implements OnInit {
     this.title = this.data.title;
     this.createForm();
 
+    console.log(this.config.uploadUrl)
+
     this.imageFrom.subscribe(r => this.myForm.get('imageUrl').setValue(r));
 
     setTimeout(() => {
@@ -43,6 +46,11 @@ export class UpdateComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  onChange(event) {
+    // console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+    // console.log(event)
   }
 
   onOkClick(o: President): void {
