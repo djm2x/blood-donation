@@ -26,6 +26,10 @@ class PresidentController extends SuperController
 
         $article = str_replace('-', ' ', $article);
 
+        if ($article == 'quoi') {
+            return view("page/articles/static");
+        }
+
         $q = $this->_context
             ->where('title', 'LIKE', "%{$article}%")
             // ->whereRaw("title like  '%$article%'")

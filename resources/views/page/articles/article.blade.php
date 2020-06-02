@@ -8,19 +8,7 @@
 
 @section('content')
 
-<style>
-    @media screen and (max-width: 844px) {
-        .with-image img{
-            width: 80%;
-        }
-    }
 
-    @media screen and (max-width: 500px) {
-        .with-image img{
-            width: 100%;
-        }
-    }
-</style>
     {{-- {{$list}} --}}
 <section class="president">
 
@@ -34,7 +22,8 @@
             @endif
             
             <div class="col-md-12 with-image">
-                {!! $model ? str_replace('http://localhost:8000', request()->getSchemeAndHttpHost(), $model->description) : 'Le contenu est pas encore publié.' !!}
+                {{-- {!! $model ? str_replace('http://localhost:8000', request()->getSchemeAndHttpHost(), $model->description) : 'Le contenu est pas encore publié.' !!} --}}
+                {!! $model ? $model->description : 'Le contenu est pas encore publié.' !!}
             </div>
 
             @if(request()->is('article/reseau'))
@@ -49,7 +38,6 @@
                 Your browser does not support HTML5 video.
             </video> --}}
         </div>
-
     </div>
 </section>
 
