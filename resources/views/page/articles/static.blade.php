@@ -249,8 +249,12 @@
         
                 </p>
                 <p class="MsoNormal"><b><i><span lang="FR">Ainsi&nbsp;:</span></i></b></p>
-                <p class="MsoNormal" style="text-align: center;"><img
-                        src="{{request()->getSchemeAndHttpHost()}}/imageAE/donneur.png"><b><i><span lang="FR">&nbsp;</span></i></b></p>
+                <p class="MsoNormal" style="text-align: center;">
+                        {{-- <div class="col-md-12 ">
+                                <img class="with-image" src="{{request()->getSchemeAndHttpHost()}}/imageAE/le sang cest quoi.jpg">
+    
+                        </div> --}}
+                        <img class="with-image"src="{{request()->getSchemeAndHttpHost()}}/imageAE/donneur.png"><b><i><span lang="FR">&nbsp;</span></i></b></p>
             </div>
             
             
