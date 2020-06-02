@@ -153,7 +153,7 @@
                         divisés en plusieurs catégories : macrophages, lymphocytes, etc.</span></p>
                 <p class="MsoNormal"><span lang="FR-CA"><br></span></p>
                 <p class="MsoNormal" style="text-align: center;"><span lang="FR-CA"><img
-                            src="{{request()->getSchemeAndHttpHost()}}/imageAE/globules.jpg"></span></p>
+                        class="with-image" src="{{request()->getSchemeAndHttpHost()}}/imageAE/globules.jpg"></span></p>
                 <p class="MsoNormal"><span lang="FR-CA"><br></span></p>
                 <p class="MsoNormal"><span lang="FR-CA">&nbsp;</span><span lang="FR"></span></p>
                 <div class="row">
@@ -225,7 +225,7 @@
                 <p class="MsoNormal"><span><br></span></p>
                 <p class="MsoNormal"><b><u><span lang="FR-CA">Système ABO</span></u></b></p>
                 <p class="MsoNormal" style="text-align: center;"><img
-                        src="{{request()->getSchemeAndHttpHost()}}/imageAE/abo.png"><span>&nbsp;</span><br></p>
+                        class="with-image" src="{{request()->getSchemeAndHttpHost()}}/imageAE/abo.png"><span>&nbsp;</span><br></p>
                 <p class="MsoNormal"><span><br></span></p>
                 <p class="MsoNormal"><b><i><span lang="FR-CA">Et c’est la même chose pour le facteur Rhésus
                                 (+ ou -).</span></i></b><i><span lang="FR"></span></i></p>
@@ -250,10 +250,7 @@
                 </p>
                 <p class="MsoNormal"><b><i><span lang="FR">Ainsi&nbsp;:</span></i></b></p>
                 <p class="MsoNormal" style="text-align: center;">
-                        {{-- <div class="col-md-12 ">
-                                <img class="with-image" src="{{request()->getSchemeAndHttpHost()}}/imageAE/le sang cest quoi.jpg">
-    
-                        </div> --}}
+                        
                         <img class="with-image"src="{{request()->getSchemeAndHttpHost()}}/imageAE/donneur.png"><b><i><span lang="FR">&nbsp;</span></i></b></p>
             </div>
             
