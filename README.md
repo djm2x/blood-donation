@@ -1,7 +1,7 @@
 composer global require laravel/installer
 laravel new blog
 
-
+php artisan make:middleware Localization
 
 php artisan key:generate
 php artisan serve --port=8080
@@ -39,3 +39,6 @@ php artisan make:migration add_role_to_users_table --table=users
 php artisan make:middleware CheckIsActive
 
 https://github.com/heroku/heroku-buildpack-php
+
+# internalisation
+https://dev.to/fadilxcoder/adding-multi-language-functionality-in-a-website-developed-in-laravel-4ech

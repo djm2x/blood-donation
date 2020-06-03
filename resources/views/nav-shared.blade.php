@@ -85,6 +85,18 @@
         <a class="{{ request()->is('contact') ? 'nav-link active' : 'nav-link' }}" href="{{ route('contact') }}">Contact</a>
     </li>
 
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Lang {{app()->getLocale()}} @lang('menu.test')
+        </a>
+        {{-- <a class="{{ request()->is('planification') ? 'nav-link active' : 'nav-link' }}" href="{{ route('planification') }}">Don du song</a> --}}
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+            <a class="dropdown-item" href="{{ url('localization/fr') }}">Fr</a>
+            <a class="dropdown-item" href="{{ url('localization/ar') }}">Ar</a>
+        </div>
+    
+    </li>
+
     {{-- <li class="nav-item ml-3">
         <a class="btn btn-warning" href="{{ route('admin') }}">Back-office</a>
     </li> --}}
