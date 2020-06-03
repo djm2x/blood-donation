@@ -12,7 +12,7 @@
     {{-- {{$list}} --}}
 <section class="president">
 
-    <div class="container mt-5 mb-5 mt-5">
+    <div class="container mt-3 mb-5">
         <div class="d-flex flex-wrap justify-content-center align-items-center">
             @if(request()->is('article/gouvernance'))
                 <div class="col-md-12 mb-5">
@@ -21,7 +21,7 @@
                 </div>
             @endif
             
-            <div class="col-md-12 with-image">
+            <div class="with-image">
                 {{-- {!! $model ? str_replace('http://localhost:8000', request()->getSchemeAndHttpHost(), $model->description) : 'Le contenu est pas encore publié.' !!} --}}
                 {!! $model ? $model->description : 'Le contenu est pas encore publié.' !!}
             </div>

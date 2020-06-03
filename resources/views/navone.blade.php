@@ -46,8 +46,9 @@
             <a class="navbar-brand  pl-3 " href="{{ route('home') }}">
                 <img src="{{ asset('images/icon2.jpg') }}" style="width:150px" alt="don du song">
             </a>
-            <button class="navbar-toggler pr-3" type="button" data-toggle="collapse" data-target="#navbarMobile" aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler  pr-3" type="button" data-toggle="collapse" data-target="#navbarMobile" aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
+                <i class="fas fa-times" style="display: none"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarMobile">
