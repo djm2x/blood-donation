@@ -72,7 +72,9 @@ export class UpdateComponent implements OnInit {
     this.myForm = this.fb.group({
       id: this.o.id,
       title: [this.o.title, Validators.required],
-      description: [this.o.description, Validators.required],
+      titleAr: [this.o.titleAr, Validators.required],
+      description: [this.o.description],
+      descriptionAr: [this.o.descriptionAr],
       date: [this.o.date, Validators.required],
       imageUrl: [this.o.imageUrl],
       // idRegion: [this.session.user.idRegion, Validators.required],

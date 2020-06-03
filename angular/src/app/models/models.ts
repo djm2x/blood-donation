@@ -60,7 +60,9 @@ export class Planification {
 export class President {
   id = 0;
   title = '';
+  titleAr = '';
   description = '';
+  descriptionAr = '';
   date = new Date();
   imageUrl = '';
 }

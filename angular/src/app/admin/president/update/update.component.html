@@ -9,16 +9,30 @@
     <div mat-dialog-content>
 
       <form [formGroup]="myForm">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="col-md-6">
           <mat-label>Titre</mat-label>
           <input matInput formControlName="title" required>
         </mat-form-field>
 
-        <app-upload-image nameBtn="Image" [folderToSaveInServer]="folderToSaveInServer" [propertyOfParent]="imageTo"
-          [eventSubmitToParent]="imageFrom" [eventSubmitFromParent]="eventSubmitFromParent">
-        </app-upload-image>
+        <mat-form-field appearance="fill" class="col-md-6">
+          <mat-label>العنوان</mat-label>
+          <input matInput formControlName="titleAr" required>
+        </mat-form-field>
 
-        <angular-editor (ngModelChange)="onChange($event)" formControlName="description" [config]="config"></angular-editor>
+        <!-- <app-upload-image nameBtn="Image" [folderToSaveInServer]="folderToSaveInServer" [propertyOfParent]="imageTo"
+          [eventSubmitToParent]="imageFrom" [eventSubmitFromParent]="eventSubmitFromParent">
+        </app-upload-image> -->
+
+        <mat-divider> </mat-divider>
+
+        <mat-tab-group animationDuration="0ms" mat-align-tabs="center">
+          <mat-tab label="Version Française">
+            <angular-editor (ngModelChange)="onChange($event)" formControlName="description" [config]="config"></angular-editor>
+          </mat-tab>
+          <mat-tab label="النسخة العربية">
+            <angular-editor (ngModelChange)="onChange($event)" formControlName="descriptionAr" [config]="config"></angular-editor>
+          </mat-tab>
+        </mat-tab-group>
 
 
       </form>

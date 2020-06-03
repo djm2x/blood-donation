@@ -27,7 +27,7 @@
 
 <section class="sidenav">
     <section class="news pb-2">
-        <div class="card w-100" style="border-radius: 0; height: 100vh">
+        <div class="card w-100" style="border-radius: 0; height: 50vh">
             <div class="card-body">
                 <h5 class="card-title">Test</h5>
                 <h6 class="card-subtitle mb-2" style="width: 30%">

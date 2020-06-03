@@ -10,34 +10,43 @@ class AppServiceProvider extends ServiceProvider
 {
     protected $cntsh = [
         //1cntsh
-        ['route' => 'president', 'name' => 'Diagramme'],
-        ['route' => 'president', 'name' => 'Missions'],
-        ['route' => 'president', 'name' => 'Mot du directeur'],
-        ['route' => 'president', 'name' => 'Réseau national'],
-        ['route' => 'president', 'name' => 'Gouvernance'],
-        ['route' => 'president', 'name' => 'Histoire'],
-        ['route' => 'president', 'name' => 'Bilan activité'],
+        ['route' => 'cntsh/diagramme', 'name' => 'Diagramme'],
+        ['route' => 'cntsh/missions', 'name' => 'Missions'],
+        ['route' => 'cntsh/directeur', 'name' => 'Motdudirecteur'],
+        ['route' => 'cntsh/reseau', 'name' => 'Reseaunational'],
+        ['route' => 'cntsh/gouvernance', 'name' => 'Gouvernance'],
+        ['route' => 'cntsh/histoire', 'name' => 'Histoire'],
+        ['route' => 'cntsh/bilan', 'name' => 'Bilanactivite'],
+    ];
+    protected $sang = [
         //2sang
-        ['route' => 'president', 'name' => 'Produit sanguins'],
-        ['route' => 'president', 'name' => 'Le sang, c\'est quoi'],
-        ['route' => 'president', 'name' => 'Hemouigilance'],
-        ['route' => 'president', 'name' => 'Cout de prestation'],
-        ['route' => 'president', 'name' => 'Situation nationale de don de sang'],
-        ['route' => 'president', 'name' => 'Audit'],
+        ['route' => 'sang/quoi', 'name' => 'Lesangestquoi'],
+        ['route' => 'sang/produit', 'name' => 'Produitsanguins'],
+        ['route' => 'sang/hemovigilance', 'name' => 'Hemouigilance'],
+        ['route' => 'sang/cout', 'name' => 'Coutdeprestation'],
+        ['route' => 'sang/situation', 'name' => 'Situationnationalededondesang'],
+        ['route' => 'sang/audit', 'name' => 'Audit'],
+    ];
+    protected $partenaires = [
+        //4Partenaires
+        ['route' => 'partenaires/association', 'name' => 'partenaires'],
+        ['route' => 'partenaires/partenaires', 'name' => 'Associationdonneurs'],
+        ['route' => 'partenaires/transfusion', 'name' => 'Partenairesinstitutionnels'],
+        ['route' => 'partenaires/press', 'name' => 'Transfusionmondiale'],
+    ];
+    protected $don = [
         //3don du sang
-        ['route' => 'president', 'name' => 'Planification'],
-        ['route' => 'president', 'name' => 'Pouquoi donner du sang?'],
-        ['route' => 'president', 'name' => 'Qui peut deonner du sang?'],
-        ['route' => 'president', 'name' => 'Informations post-don'],
-        ['route' => 'president', 'name' => 'Faire une promesse de don'],
-        ['route' => 'president', 'name' => 'Ou donner son sang'],
-        ['route' => 'president', 'name' => 'FAQ'],
-         //4Partenaires
-         ['route' => 'president', 'name' => 'Association donneurs'],
-         ['route' => 'president', 'name' => 'Partenaires institutionnels'],
-         ['route' => 'president', 'name' => 'Transfusion mondiale'],
-         ['route' => 'president', 'name' => 'Press'],
-         ['route' => 'president', 'name' => 'Ou donner son sang']
+        ['route' => 'planification', 'name' => 'Press'],
+        ['route' => 'don-du-song/Pourquoi', 'name' => 'Pouquoidonnerdusang'],
+        ['route' => 'don-du-song/qui', 'name' => 'Quipeutdeonnerdusang'],
+        ['route' => 'don-du-song/informations', 'name' => 'Informationspostdon'],
+        ['route' => 'don-du-song/promesse', 'name' => 'Faireunepromessededon'],
+        ['route' => 'don-du-song/ou-donner', 'name' => 'Oudonnersonsang'],
+        ['route' => 'don-du-song/faq', 'name' => 'FAQ'],
+
+        //  ['route' => 'president', 'name' => 'Nos Activiés'],
+        //  ['route' => 'president', 'name' => 'Galerie'],
+        //  ['route' => 'president', 'name' => 'Contact'],
 
     ];
     /**
@@ -58,7 +67,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        // URL::forceScheme('https');
-        Session::put('cntsh', $this->cntsh);
+        view()->share('cntsh', $this->cntsh);
+        view()->share('sang', $this->sang);
+        view()->share('partenaires', $this->partenaires);
+        view()->share('don', $this->don);
     }
 }

@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: '', component: AdminComponent,
     children: [
-      { path: '', redirectTo: 'activite', pathMatch: 'full'},
+      { path: '', redirectTo: 'article', pathMatch: 'full'},
 
       { path: 'article', loadChildren: () => import('./president/shared.module').then(m => m.SharedModule), },
       { path: 'planification', loadChildren: () => import('./planification/shared.module').then(m => m.SharedModule), },

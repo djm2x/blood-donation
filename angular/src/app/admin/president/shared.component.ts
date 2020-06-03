@@ -21,7 +21,7 @@ export class SharedComponent implements OnInit {
 
   dataSource = [];
   columnDefs = [
-    { columnDef: 'imageUrl', headName: 'image' },
+    // { columnDef: 'imageUrl', headName: 'image' },
     { columnDef: 'title', headName: '' },
     { columnDef: 'date', headName: '' },
     // { columnDef: 'region', headName: '' },
@@ -38,11 +38,11 @@ export class SharedComponent implements OnInit {
     , @Inject('BASE_URL') private url: string ) { }
 
   ngOnInit() {
-    this.getPage(0, 10, 'id', 'desc');
+    this.getPage(0, 25, 'id', 'desc');
     merge(...[this.sort.sortChange, this.paginator.page, this.update]).subscribe(
       r => {
         r === true ? this.paginator.pageIndex = 0 : r = r;
-        !this.paginator.pageSize ? this.paginator.pageSize = 10 : r = r;
+        !this.paginator.pageSize ? this.paginator.pageSize = 25 : r = r;
         const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
         this.isLoadingResults = true;
         this.getPage(

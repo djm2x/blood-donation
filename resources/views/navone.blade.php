@@ -26,7 +26,7 @@
                 </a> --}}
 
                 <form class="my-2 my-lg-0 mr-2 d-flex align-items-center justify-content-center">
-                    <input class="form-control mr-sm-2 mr-3" type="search" placeholder="Recherche" aria-label="Search">
+                    <input class="form-control mr-sm-2 mr-3" type="search" placeholder="@lang('menu.Recherche')" aria-label="Search">
                     <a class="navbar-brand search" href="{{ route('home') }}">
                         <i class="fas fa-search"></i>
                     </a>
@@ -41,7 +41,7 @@
 </section>
 
 <section class="navMobile d-md-none">
-    
+
         <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand  pl-3 " href="{{ route('home') }}">
                 <img src="{{ asset('images/icon2.jpg') }}" style="width:150px" alt="don du song">
@@ -57,12 +57,12 @@
 
 
                 <form class="p-3 d-flex align-items-center justify-content-center  w-100" style="background-color:#fff">
-                    <input class="form-control mr-sm-2 mr-3" type="search" placeholder="Recherche" aria-label="Search">
+                    <input class="form-control mr-sm-2 mr-3" type="search" placeholder="@lang('menu.Recherche')" aria-label="Search">
                     <a class="navbar-brand search" href="{{ route('home') }}">
                         <i class="fas fa-search"></i>
                     </a>
                 </form>
-                <section style="background-color: red; width: 100vw; height: 4px"></section>
+                <section style="background-color: #f70509; width: 100vw; height: 4px"></section>
         </nav>
 </section>
 
@@ -81,7 +81,7 @@
             </div>
         </nav>
     </div>
-    
+
 </section>
-<section style="background-color: red; width: 100vw; height: 4px"></section>
+<section style="background-color: #f70509; width: 100vw; height: 4px"></section>
 

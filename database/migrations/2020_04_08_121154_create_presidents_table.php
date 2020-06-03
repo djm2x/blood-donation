@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreatePresidentsTable extends Migration
@@ -16,7 +17,9 @@ class CreatePresidentsTable extends Migration
         Schema::create('presidents', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('description');
+            $table->string('titleAr');
+            $table->string('description')->nullable(true);
+            $table->string('descriptionAr')->nullable(true);
             $table->dateTime('date')->nullable(true);
             $table->string('imageUrl');
 

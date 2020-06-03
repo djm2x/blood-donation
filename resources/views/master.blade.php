@@ -18,7 +18,8 @@
 
 </head>
 
-<body style="{{ app()->getLocale() == 'fr' ? 'direction: ltr' : 'direction: rtl' }}">
+{{-- <body style="{{ app()->getLocale() == 'fr' ? 'direction: ltr' : 'direction: rtl' }}"> --}}
+    <body>
     <div id="haut">Bonjour</div>
     <header id="entete" style="position: fixed; top: 0;z-index: 99999 !important;">
         @include('navone')
@@ -33,7 +34,7 @@
                     @if (!request()->is('/'))
                     <section class="title d-flex align-items-center">
                         <div class="container">
-                            <h2 class="m-0">@yield('title')</h2>
+                            <h2 class="{{ app()->getLocale() == 'fr' ? 'm-0' : 'm-0 text-right' }}">@yield('title')</h2>
                         </div>
                     </section>
                     @endif
