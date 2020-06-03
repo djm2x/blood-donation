@@ -12,7 +12,7 @@
     {{-- {{$list}} --}}
 <section class="president">
 
-    <div class="container mt-3 mb-5">
+    <div class="mt-3 mb-5">
         <div class="d-flex flex-wrap justify-content-center align-items-center">
             @if(request()->is('article/gouvernance'))
                 <div class="col-md-12 mb-5">

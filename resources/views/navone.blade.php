@@ -41,7 +41,7 @@
 </section>
 
 <section class="navMobile d-md-none">
-    <div class="">
+    
         <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand  pl-3 " href="{{ route('home') }}">
                 <img src="{{ asset('images/icon2.jpg') }}" style="width:150px" alt="don du song">
@@ -62,10 +62,10 @@
                         <i class="fas fa-search"></i>
                     </a>
                 </form>
-
+                <section style="background-color: red; width: 100vw; height: 4px"></section>
         </nav>
-    </div>
 </section>
+
 
 
 
@@ -81,5 +81,7 @@
             </div>
         </nav>
     </div>
+    
 </section>
+<section style="background-color: red; width: 100vw; height: 4px"></section>
 

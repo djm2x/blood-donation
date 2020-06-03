@@ -26,15 +26,28 @@
 
 
     <main class="main">
-        @if (!request()->is('/'))
-            <section class="title d-flex align-items-center">
-                <div class="container">
-                    <h2 class="m-0">@yield('title')</h2>
+        <div class="{{ request()->is('/') ? '' : 'container' }}">
+            <div class="row">
+                <div class="{{ request()->is('/') ? 'col-md-12' : 'col-sm-12 col-md-8' }}">
+                    {{-- <h1 class="mt-4 text-capitalize">@yield('title')</h1> --}}
+                    @if (!request()->is('/'))
+                    <section class="title d-flex align-items-center">
+                        <div class="container">
+                            <h2 class="m-0">@yield('title')</h2>
+                        </div>
+                    </section>
+                    @endif
+                    {{--  --}}
+                    @yield('content')
                 </div>
-            </section>
-        @endif
 
-        @yield('content')
+                <div class="col-sm-12 col-md-4">
+                    @if (!request()->is('/'))
+                        @include('sidenav')
+                    @endif
+                </div>
+            </div>
+        </div>
     </main>
 
     {{-- @foreach(Session::get('cntsh') as $e)

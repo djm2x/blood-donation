@@ -5,13 +5,18 @@ use Illuminate\Support\Facades\View;
 
 
 Route::get('', 'HomeController@index')->name('home');
+
+// 
+Route::get('/cntsh/{name}', 'PresidentController@page');
+Route::get('/sang/{name}', 'PresidentController@page');
+Route::get('/partenaires/{name}', 'PresidentController@page');
+Route::get('/planification', 'PlanificationController@page')->name('planification');
+Route::get('/don-du-song/{name}', 'PresidentController@page');
+
+
 Route::get('/activite', 'ActiviteController@list')->name('activite');
 Route::get('/activite/{id}', 'ActiviteController@detail')->name('detail-activite');
 
-// a propos
-Route::get('/article/{name}', 'PresidentController@page');
-
-Route::get('/planification', 'PlanificationController@page')->name('planification');
 Route::get('/president', 'PresidentController@list')->name('president');
 Route::get('/blog', 'BlogController@list')->name('blog');
 // Route::get('/partenaire', 'PartenaireController@list')->name('partenaire');
@@ -26,7 +31,7 @@ Route::get('/phpinfo', function() {
 
 Route::fallback(function (string $route) {
 
-    if(begnWith($route, "admin") || begnWith($route, "auth")) {
+    if(beginWith($route, "admin") || beginWith($route, "auth")) {
         return View::make('index');
     }
 
@@ -34,7 +39,7 @@ Route::fallback(function (string $route) {
 });
 
 
-function begnWith($str, $begnString) {
+function beginWith($str, $begnString) {
     $len = strlen($begnString);
     return (substr($str, 0, $len) === $begnString);
 }
