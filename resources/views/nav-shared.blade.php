@@ -87,7 +87,7 @@
 
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Lang {{app()->getLocale()}} @lang('menu.test')
+            Lang @lang('menu.test')
         </a>
         {{-- <a class="{{ request()->is('planification') ? 'nav-link active' : 'nav-link' }}" href="{{ route('planification') }}">Don du song</a> --}}
         <div class="dropdown-menu" aria-labelledby="navbarDropdown4">

@@ -18,7 +18,7 @@
 
 </head>
 
-<body>
+<body style="{{ app()->getLocale() == 'fr' ? 'direction: ltr' : 'direction: rtl' }}">
     <div id="haut">Bonjour</div>
     <header id="entete" style="position: fixed; top: 0;z-index: 99999 !important;">
         @include('navone')
