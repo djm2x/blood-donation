@@ -1,6 +1,6 @@
 
 
-<ul class="navbar-nav p-0 w-100">
+<ul class="{{ app()->getLocale() == 'fr' ? 'navbar-nav p-0 w-100' : 'navbar-nav p-0 w-100 text-right' }}">
     <li class="nav-item">
         <a class="{{ request()->is('/') ? 'nav-link home active' : 'nav-link home' }}" href="{{ route('home') }}">
             <i  class="fas fa-home d-none d-md-block"></i>
@@ -70,7 +70,7 @@
     <span style="flex: 1 1 auto;"></span>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fas fa-language fa-2x"></i> &nbsp; <span >({{app()->getLocale()}})</span>
+             <i class="fas fa-language fa-2x"></i>&nbsp;<span>({{app()->getLocale()}})</span>
         </a>
         {{-- <a class="{{ request()->is('planification') ? 'nav-link active' : 'nav-link' }}" href="{{ route('planification') }}">Don du song</a> --}}
         <div class="dropdown-menu" aria-labelledby="navbarDropdown4">

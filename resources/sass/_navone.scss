@@ -186,7 +186,7 @@ $color: #fff;
         }
         a {
             display: flex;
-            justify-content: center;
+            // justify-content: center;
             align-items: center;
             height: 100%;
             text-transform: uppercase;
@@ -200,9 +200,9 @@ $color: #fff;
                 background-color: $color !important;
             }
 
-            @media screen and (max-width: 600px) {
-                display: block !important;
-            }
+            // @media screen and (max-width: 600px) {
+            //     display: block !important;
+            // }
         }
     }
 
