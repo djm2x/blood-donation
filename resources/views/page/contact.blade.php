@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('title')
-    Nous contacter
+    @lang('page.Nouscontacter')
 @stop
 
 @section('content')
@@ -15,7 +15,7 @@
               </div>
         </div>
     </div> --}}
-    <div class="container">
+    <div class="{{ app()->getLocale() == 'fr' ? 'text-left' : 'text-right' }}">
         <div class="d-flex flex-wrap justify-content-center align-items-center mt-5 mb-5">
             <div class="col-md-6">
                 <form id="myForm">
@@ -27,26 +27,26 @@
 
                         <div class="col-md-10">
                             <div class="form-group">
-                                <label>Nom</label>
+                                <label>@lang('page.Nom')</label>
                                 <input id="name" type="text" class="form-control">
                             </div>
 
                             <div class="form-group">
-                                <label>Email</label>
+                                <label>@lang('page.Email')</label>
                                 <input id="email" type="email" class="form-control" required>
                             </div>
 
                             <div class="form-group">
-                                <label>Tel</label>
+                                <label>@lang('page.Tel')</label>
                                 <input id="phone" type="text" class="form-control">
                             </div>
 
                             <div class="form-group">
-                                <label>Message</label>
+                                <label>@lang('page.Message')</label>
                                 <textarea id="message" class="form-control" rows="3" required></textarea>
                             </div>
                             <div class="d-flex flex-row-reverse">
-                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                                <button type="submit" class="btn btn-primary">@lang('page.Envoyer')</button>
                             </div>
                         </div>
                     </div>
@@ -96,10 +96,12 @@
          * @param {Array} data
          */
          function toasterHtml() {
+            let translate = {!! json_encode(app()->getLocale())  !!};
+            translate = translate === 'fr' ? 'Votre message a été bien transmise' : 'تم إرسال رسالتك بنجاح';
             toaster.innerHTML =
             `
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Votre message a été bien transmise</strong>
+                <strong>${translate}</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

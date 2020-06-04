@@ -29,14 +29,14 @@ class AppServiceProvider extends ServiceProvider
     ];
     protected $partenaires = [
         //4Partenaires
-        ['route' => 'partenaires/association', 'name' => 'partenaires'],
-        ['route' => 'partenaires/partenaires', 'name' => 'Associationdonneurs'],
-        ['route' => 'partenaires/transfusion', 'name' => 'Partenairesinstitutionnels'],
-        ['route' => 'partenaires/press', 'name' => 'Transfusionmondiale'],
+        ['route' => 'partenaires/association', 'name' => 'Associationdonneurs'],
+        ['route' => 'partenaires/partenaires', 'name' => 'Partenairesinstitutionnels'],
+        ['route' => 'partenaires/transfusion', 'name' => 'Transfusionmondiale'],
+        ['route' => 'partenaires/press', 'name' => 'Press'],
     ];
     protected $don = [
         //3don du sang
-        ['route' => 'planification', 'name' => 'Press'],
+        ['route' => 'planification', 'name' => 'Planification'],
         ['route' => 'don-du-song/Pourquoi', 'name' => 'Pouquoidonnerdusang'],
         ['route' => 'don-du-song/qui', 'name' => 'Quipeutdeonnerdusang'],
         ['route' => 'don-du-song/informations', 'name' => 'Informationspostdon'],

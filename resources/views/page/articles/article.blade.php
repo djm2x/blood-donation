@@ -3,7 +3,7 @@
 
 
 @section('title')
-    {{$model ? (app()->getLocale() == 'fr' ? $model->title : $model->titleAr)
+    {{$model ? (app()->getLocale() == 'fr' ? $model->title : ($model->titleAr != '' ? $model->titleAr : $model->title ))
         : (app()->getLocale() == 'fr' ? 'Pas de titre' : 'لا يوجد عنوان')}}
 @stop
 
@@ -29,7 +29,7 @@
     }
 </style>
     {{-- {{$list}} --}}
-<section class="president">
+<section class="{{ app()->getLocale() == 'fr' ? 'president text-left' : 'president text-right' }}">
 
     <div class="mt-3 mb-5">
         <div class="d-flex flex-wrap justify-content-center align-items-center">
@@ -45,7 +45,7 @@
                 @if (app()->getLocale() == 'fr')
                     {!! $model ? $model->description : 'Le contenu est pas encore publié.' !!}
                 @else
-                    {!! $model ? $model->descriptionAr : 'لم يتم نشر المحتوى بعد.' !!}
+                    {!! $model ? ($model->descriptionAr != '' ? $model->descriptionAr : $model->description) : 'لم يتم نشر المحتوى بعد.' !!}
                 @endif
             </div>
 

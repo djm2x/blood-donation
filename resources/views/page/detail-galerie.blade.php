@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('title')
-    Galerie d'images
+@lang('page.GalerieDimages')
 @stop
 
 
@@ -22,7 +22,7 @@
 @stop
 
 @section('content')
-<section class="galerie">
+<section class="{{ app()->getLocale() == 'fr' ? 'galerie text-left' : 'galerie text-right' }}">
 
     {{-- <div class="wallpaper" >
         <div class="para d-flex flex-column align-items-center mt-3">

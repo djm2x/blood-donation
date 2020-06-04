@@ -1,11 +1,11 @@
 @extends('master')
 
 @section('title')
-    Galerie d'images
+    @lang('page.GalerieDimages')
 @stop
 
 @section('content')
-<section class="galerie">
+<section class="{{ app()->getLocale() == 'fr' ? 'galerie text-left' : 'galerie text-right' }}">
     {{-- <div class="wallpaper" >
         <div class="para d-flex flex-column align-items-center mt-3">
             <p class="text-danger text-uppercase h2 font-weight-bold anime">Galerie d'images</p>
@@ -18,7 +18,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center p-2 mt-5">
             @foreach ($list as $e)
-                <div  class="col-md-6 col-sm-6 col-lg-3 mb-3 d-flex justify-content-center">
+                <div  class="col-md-6 col-sm-6 col-lg-4 mb-3 d-flex justify-content-center">
                     <div class="card m-1" style="width: 18rem;cursor: pointer;">
                         <hr class="m-0">
                         <hr class="m-0">
@@ -30,8 +30,8 @@
                             <p class="card-text m-0 text-dark text-muted">
                                 {{date('d-m-Y', strtotime($e->date))}}
                             </p>
-                            <div class="d-flex d-flex flex-row-reverse mt-3">
-                                <a class="btn btn-danger text-uppercase"  href="detail-galerie/{{$e->id}}">plus d'info...</a>
+                            <div class="d-flex d-flex flex-row-reverse mt-3 p-1">
+                                <a class="btn btn-danger text-uppercase"  href="detail-galerie/{{$e->id}}">@lang('page.plusdinfo')...</a>
                             </div>
 
                             {{-- <div class="d-flex justify-content-between align-items-center mt-3">

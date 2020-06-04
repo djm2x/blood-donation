@@ -18,8 +18,7 @@
 
 </head>
 
-{{-- <body style="{{ app()->getLocale() == 'fr' ? 'direction: ltr' : 'direction: rtl' }}"> --}}
-    <body>
+<body style="{{ app()->getLocale() == 'fr' ? 'direction: ltr' : 'direction: rtl' }}">
     <div id="haut">Bonjour</div>
     <header id="entete" style="position: fixed; top: 0;z-index: 99999 !important;">
         @include('navone')
@@ -29,20 +28,13 @@
     <main class="main">
         <div class="{{ request()->is('/') ? '' : 'container' }}">
             <div class="row">
-                <div class="{{ request()->is('/') ? 'col-md-12' : 'col-sm-12 col-md-8' }}">
-                    {{-- <h1 class="mt-4 text-capitalize">@yield('title')</h1> --}}
-                    @if (!request()->is('/'))
-                    <section class="title d-flex align-items-center">
-                        <div class="container">
-                            <h2 class="{{ app()->getLocale() == 'fr' ? 'm-0' : 'm-0 text-right' }}">@yield('title')</h2>
-                        </div>
-                    </section>
-                    @endif
-                    {{--  --}}
+                <div class="{{ request()->is('/') ? 'col-md-12' : 'col-sm-12 col-md-9 p-0' }}">
+                    @include('title')
+
                     @yield('content')
                 </div>
 
-                <div class="col-sm-12 col-md-4">
+                <div class="col-sm-12 col-md-3">
                     @if (!request()->is('/'))
                         @include('sidenav')
                     @endif
@@ -59,7 +51,7 @@
         @include('footer')
     </footer>
 
-    <a id="btn" href="#haut" class="d-flex justify-content-center align-items-center"><i class="fas fa-arrow-up text-white"></i></a>
+    <a id="btn" class="d-flex justify-content-center align-items-center"><i class="fas fa-arrow-up text-white"></i></a>
 
     <!-- Scripts -->
     <script>
@@ -77,6 +69,11 @@
                 x.style.display = 'none';
                 isBar = true;
             }
+        });
+
+        //
+        document.querySelector('#btn').addEventListener('click', () => {
+            document.querySelector('#haut').scrollIntoView({block: 'end', inline: 'nearest', behavior: 'smooth'})
         });
     </script>
     <script src="{{ asset('js/app.js') }}"></script>

@@ -85,11 +85,13 @@ async function getPage(pageIndex, pageSize, idRegion, dateOrderDir) {
  */
 function populate(data) {
     list.innerHTML = '';
+    
     data.forEach((e, i) => {
+
         list.innerHTML +=
             `
-                    <div class=" mb-3 justify-content-center align-items-center">
-                        <div class="card m-1" style="width: 18rem;">
+                    <div class="col-md-6 col-sm-6 col-lg-4 mb-2 pl-1 pr-1 justify-content-center align-items-center">
+                        <div class="card m-1">
                             <img src="activites/${e.imageUrl.replace(';', '')}" onerror="this.onerror=null;this.src='images/verts.png';" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <p class="card-text m-0 text-dark font-weight-bold">${e.title}</p>
@@ -97,7 +99,7 @@ function populate(data) {
                                     ${e.description.substring(0, 50)} ...
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center mt-3">
-                                    <a class="btn btn-danger text-uppercase"  href="activite/${e.id}">plus d'info...</a>
+                                    <a class="btn btn-danger text-uppercase"  href="activite/${e.id}">${translate}...</a>
                                     <div class="d-flex text-dark social"> </div>
                                 </div>
                             </div>

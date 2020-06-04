@@ -31,7 +31,7 @@ return [
     'Pouquoidonnerdusang' => 'Pouquoi donner du sang?',
     'Quipeutdeonnerdusang' => 'Qui peut deonner du sang?',
     'Informationspostdon' => 'Informations post-don',
-    'Faireunepromessede don' => 'Faire une promesse de don',
+    'Faireunepromessededon' => 'Faire une promesse de don',
     'Oudonnersonsang' => 'Ou donner son sang',
     'FAQ' => 'FAQ',
     //
