@@ -32,8 +32,8 @@ export class LoaderComponent implements OnInit {
     //   },
     //   e => console.log(e)
     // );
-    this.loader.isLoading.subscribe(r => {
-      this.isActive = r;
-    });
+    // this.loader.isLoading.subscribe(r => {
+    //   this.isActive = r;
+    // });
   }
 }

@@ -62,7 +62,7 @@
                         <i class="fas fa-search"></i>
                     </a>
                 </form>
-                <section style="background-color: #f70509; width: 100vw; height: 4px"></section>
+                <section style="background-color: #f70509; width: 100vw; height: 1px"></section>
         </nav>
 </section>
 
@@ -83,5 +83,5 @@
     </div>
 
 </section>
-<section style="background-color: #f70509; width: 100vw; height: 4px"></section>
+<section style="background-color: #f70509; width: 100vw; height: 1px"></section>
 
