@@ -42,3 +42,5 @@ https://github.com/heroku/heroku-buildpack-php
 
 # internalisation
 https://dev.to/fadilxcoder/adding-multi-language-functionality-in-a-website-developed-in-laravel-4ech
+
+https://github.com/froala/angular-froala-wysiwyg
