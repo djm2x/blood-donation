@@ -6,6 +6,12 @@
 
 @section('content')
     {{-- {{$list}} --}}
+    <style>
+        .btn {
+            padding: 2px 2px;
+            font-size: .8em;
+        }
+    </style>
 
     <section class="{{ app()->getLocale() == 'fr' ? 'region text-left' : 'region text-right' }}">
         <div class=" flex-column d-flex justify-content-center align-items-center">

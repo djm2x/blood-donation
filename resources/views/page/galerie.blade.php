@@ -5,6 +5,12 @@
 @stop
 
 @section('content')
+<style>
+    .btn {
+        padding: 2px 2px;
+        font-size: .8em;
+    }
+</style>
 <section class="{{ app()->getLocale() == 'fr' ? 'galerie text-left' : 'galerie text-right' }}">
     {{-- <div class="wallpaper" >
         <div class="para d-flex flex-column align-items-center mt-3">

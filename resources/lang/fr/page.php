@@ -14,7 +14,7 @@ return [
     'Recents' => 'Récents',
     'Anciens' => 'Anciens',
     'Regions' => 'Régions',
-    'elementparpage' => 'element par page',
+    'elementparpage' => 'Element par page',
     'sur' => 'sur',
     // Galerie D'images,
     'GalerieDimages' => 'Galerie D\'images',
