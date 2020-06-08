@@ -38,16 +38,16 @@ class HomeController extends SuperController
 
         foreach ($images as $index => $value) {
             if (($index + 1) % 4 !== 0) {
-                array_push($groupe, $value);
+                array_push($groupe, "{$model->id}/{$value}");
             } else {
-                array_push($groupe, $value);
+                array_push($groupe, "{$model->id}/{$value}");
                 $groupes[$i] = $groupe;
                 $groupe = [];
                 $i ++;
             }
         }
 
-        dd($groupes);
+        // dd($groupes);
         return view('page/home', compact('groupes'));
     }
 }

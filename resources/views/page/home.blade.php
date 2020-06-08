@@ -348,80 +348,38 @@
     <div class="d-flex justify-content-center mt-5">
         <p class="text-danger text-uppercase h2 font-weight-bold ">Galerie d'IMAGE</p>
     </div>
-    <div id="carouselExampleCaptions4" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleCaptions5" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-target="#carouselExampleCaptions4" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleCaptions4" data-slide-to="1"></li>
+        @foreach ($groupes as $i => $groupe)
+            <li data-target="#carouselExampleCaptions5" data-slide-to="{{$i}}" class="{{$i == 0 ? 'active' : ''}}"></li>
+          @endforeach
         </ol>
         <div class="carousel-inner ">
-          <div class="carousel-item active">
-            <div class="d-block w-100 fallback"></div>
-            <div class="carousel-caption  d-none d-md-block d-flex flex-column justify-content-center align-items-center">
 
-                <div class="row d-flex justify-content-center p-2">
-                    <div class="col-md-6 col-sm-6 col-lg-3 mb-3 d-flex justify-content-center">
-                        <div class="card" style="width: 12.5rem;">
-                            <img src="images/H.png" class="card-img-top" alt="...">
+            @foreach ($groupes as $i => $groupe)
+            <div class="{{$i == 0 ? 'carousel-item active' : 'carousel-item'}}   ">
+                <div class="d-block w-100 fallback"></div>
+                <div class="carousel-caption  d-none d-md-block d-flex flex-column justify-content-center align-items-center">
+                    <div class="row d-flex justify-content-center p-2">
+                        @foreach ($groupe as $e)
+                        <div class="col-md-6 col-sm-6 col-lg-3 mb-3 d-flex justify-content-center">
+                            <div class="card" style="width: 12.5rem;">
+                                {{-- <img src="images/H.png" class="card-img-top" alt="..."> --}}
+                                <img src="{{url('galeries/'.$e)}}" onerror="this.onerror=null;this.src='/images/verts.png';"
+                                            class="card-img-top" style="height: 100%" alt="{{$e}}">
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-6 col-sm-6 col-lg-3 mb-3  d-flex justify-content-center">
-                        <div class="card" style="width: 12.5rem;">
-                            <img src="images/2H.png" class="card-img-top" alt="...">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-sm-6 col-lg-3 mb-3  d-flex justify-content-center">
-                        <div class="card" style="width: 12.5rem;">
-                            <img src="images/Y.png" class="card-img-top" alt="...">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-sm-6 col-lg-3 mb-3  d-flex justify-content-center">
-                        <div class="card" style="width: 12.5rem;">
-                            <img src="images/PASS.png" class="card-img-top" alt="...">
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
-          </div>
-          <div class="carousel-item">
-            <div class="d-block w-100 fallback"></div>
-            <div class="carousel-caption d-none d-md-block d-flex flex-column justify-content-center">
+            @endforeach
 
-                <div class="row d-flex justify-content-center p-2">
-                    <div class="col-md-6 col-sm-6 col-lg-3 mb-3  d-flex justify-content-center">
-                        <div class="card" style="width: 12.5rem;">
-                            <img src="images/H.png" class="card-img-top" alt="...">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-sm-6 col-lg-3 mb-3  d-flex justify-content-center">
-                        <div class="card" style="width: 12.5rem;">
-                            <img src="images/2H.png" class="card-img-top" alt="...">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-sm-6 col-lg-3 mb-3  d-flex justify-content-center">
-                        <div class="card" style="width: 12.5rem;">
-                            <img src="images/Y.png" class="card-img-top" alt="...">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-sm-6 col-lg-3 mb-3  d-flex justify-content-center">
-                        <div class="card" style="width: 12.5rem;">
-                            <img src="images/PASS.png" class="card-img-top" alt="...">
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-
-        <a class="carousel-control-prev" href="#carouselExampleCaptions4" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#carouselExampleCaptions5" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions4" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#carouselExampleCaptions5" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
