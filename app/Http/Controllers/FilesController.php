@@ -105,32 +105,50 @@ class FilesController extends Controller
 
         $allowedfileExtension = ['pdf', 'jpg', 'png', 'docx'];
 
-        if ($request->hasFile('file')) {
-            $files = $request->file('file');
-            $names = $files->getClientOriginalName();
-            foreach ($files as $key => $file) {
+        $length =  $request->length;
+        if ($length != 0/*$request->hasFile('file0')*/) {
+
+            $names = '';//$files->getClientOriginalName();
+            for ($i=0; $i < $length; $i++) {
+
+                $file = $request->file("file{$i}");
+
                 $filename = $file->getClientOriginalName();
-                // $extension = $file->getClientOriginalExtension();
-                // $check=in_array($extension,$allowedfileExtension);
-                $filename2 = $file->store('public/recipe_images/');
 
-                // $picture = date('His') . '-' . $filename;
+                $file->move(public_path(str_replace('_', '\\', $folder)), $filename);
 
-                // Storage::disk('public')->put($filename, 'Contents');
-                // php artisan storage:link
-                $names += "{$filename2};";
-
-                $file->move(public_path(str_replace('_', '\\', $folder)), $filename2);
+                $names .= public_path(str_replace('_', '\\', $folder)) .'/'. $filename;
             }
+            // $files = $request->file('file');
+
+
+            // $i = 0;
+
+            // foreach ($files as $file) {
+
+            //     $filename = $file->getClientOriginalName();
+            //     // $extension = $file->getClientOriginalExtension();
+            //     // $check=in_array($extension,$allowedfileExtension);
+            //     // $filename2 = $file->store('public/recipe_images/');
+
+            //     // $picture = date('His') . '-' . $filename;
+
+            //     // Storage::disk('public')->put($filename, 'Contents');
+            //     // php artisan storage:link
+            //     $i++;
+
+            //     $file->move(public_path(str_replace('_', '\\', $folder)), $filename2);
+            // }
 
             // return response()->json(["message" => "Image Uploaded Succesfully", "names" => $names]);
             return [
                 "message" => "Image Uploaded Succesfully", 
                 "names" => $names,
-                "files" => $files,
+                // "files" => $files,
+                "i" => $i,
             ];
         } else {
-            return response()->json(["message" => "Select image first."]);
+            return response()->json(["message" => "Select image first.", 'lenght' => $length]);
         }
     }
 }

@@ -241,13 +241,15 @@ export class UploadImageComponent implements OnInit {
 
     const formData = new FormData();
 
-    this.files.forEach(e => {
+    this.files.forEach((e, i) => {
 
       const name = this.setFileName(e);
 
-      formData.append('file', e, name);
+      formData.append(`file${i}`, e, name);
       console.log(e);
     });
+
+    formData.append('length', `${this.files.length}`);
 
 
     if (formData && this.files.length !== 0) {
