@@ -59,7 +59,12 @@ class PresidentController extends SuperController
 
         $model = $q->first();
 
-        // dd($model);
+        if ($model != null && request()->getSchemeAndHttpHost() !== 'http://localhost:8000') {
+            $model->description = str_replace('http://localhost:8000', request()->getSchemeAndHttpHost(), $model->description);
+            $model->descriptionAr = str_replace('http://localhost:8000', request()->getSchemeAndHttpHost(), $model->descriptionAr);
+        }
+
+        // dd($model->description);
         // if ($model == null) {
         //     return view('notfound');
         // }

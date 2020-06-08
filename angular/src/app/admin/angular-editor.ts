@@ -42,8 +42,8 @@ export const editorConfig: AngularEditorConfig = {
   uploadWithCredentials: false,
   sanitize: false,
   toolbarPosition: 'top',
-  toolbarHiddenButtons: [
-    ['bold', 'italic'],
-    ['fontSize']
-  ]
+  // toolbarHiddenButtons: [
+  //   ['bold', 'italic'],
+  //   ['fontSize']
+  // ]
 };

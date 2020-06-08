@@ -10,7 +10,7 @@ return [
     'Reseaunational' => 'Réseau national',
     'Gouvernance' => 'Gouvernance',
     'Histoire' => 'Histoire',
-    'Bilan activité' => 'Bilan activité',
+    'Bilanactivite' => 'Bilan activité',
     //
     'sang' => 'sang',
     'Lesangestquoi' => 'Le sang, c\'est quoi',

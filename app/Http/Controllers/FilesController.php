@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use File;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
 
 class FilesController extends Controller
@@ -52,7 +52,7 @@ class FilesController extends Controller
     public function addImage($folder, $filename)
     {
         $path = request()->getSchemeAndHttpHost().'/'.$folder.'/'.$filename;
-        
+
         // if (Image::create(['name'=>$filename, 'path'=>$path])) {
 
         //     return [
@@ -87,11 +87,46 @@ class FilesController extends Controller
             // Storage::disk('public')->delete("{$folder}/{$file}");
             File::delete("{$folder}/{$file}");
 
+
             $filesDeleted.= "{$folder}/{$file};";
         }
 
         return [
             'message' => count($filenames) == 0 ? "empty files {$filesDeleted}" : "delete successfuly {$filesDeleted}",
         ];
+    }
+
+    public function uploadFiles2(Request $request, string $folder) // : Collection
+
+    {
+        $request->validate([
+            // 'file' => 'required|mimes:pdf,xlx,csv|max:2048',
+            // 'file' => 'required',
+        ]);
+
+        $allowedfileExtension = ['pdf', 'jpg', 'png', 'docx'];
+
+        if ($request->hasFile('file')) {
+            $files = $request->file('file');
+            $names = $files->getClientOriginalName();
+            foreach ($files as $key => $file) {
+                $filename = $file->getClientOriginalName();
+                // $extension = $file->getClientOriginalExtension();
+                // $check=in_array($extension,$allowedfileExtension);
+                $filename2 = $file->store('public/recipe_images/');
+
+                // $picture = date('His') . '-' . $filename;
+
+                // Storage::disk('public')->put($filename, 'Contents');
+                // php artisan storage:link
+                $names += "{$filename2};";
+
+                $file->move(public_path(str_replace('_', '\\', $folder)), $filename2);
+            }
+
+            return response()->json(["message" => "Image Uploaded Succesfully", "names" => $names]);
+        } else {
+            return response()->json(["message" => "Select image first."]);
+        }
     }
 }

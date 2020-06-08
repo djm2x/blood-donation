@@ -33,7 +33,7 @@ export class UploadImageComponent implements OnInit {
 
       this.listOfNames = l;
       this.listToDelete = [];
-      console.log(l);
+      // console.log(l);
 
       if (!this.multiple) {
         const imageUrl = l.length !== 0 ? l[0] : null;
@@ -246,11 +246,11 @@ export class UploadImageComponent implements OnInit {
       const name = this.setFileName(e);
 
       formData.append('file', e, name);
-      console.log(e)
+      console.log(e);
     });
 
 
-    if (formData) {
+    if (formData && this.files.length !== 0) {
       if (value.id && !this.folderToSaveInServer.includes('_')) {
         this.folderToSaveInServer = `${this.folderToSaveInServer}_${value.id}`;
       }

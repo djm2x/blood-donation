@@ -41,10 +41,10 @@
             @endif --}}
 
             <div class="with-image">
-                {{-- {!! $model ? str_replace('http://localhost:8000', request()->getSchemeAndHttpHost(), $model->description) : 'Le contenu est pas encore publié.' !!} --}}
                 @if (app()->getLocale() == 'fr')
-                    {!! $model ? $model->description : 'Le contenu est pas encore publié.' !!}
+                {!! $model ? $model->description : 'Le contenu est pas encore publié.' !!}
                 @else
+                {{-- {!! $model ? str_replace('http://localhost:8000', request()->getSchemeAndHttpHost(), $model->description) : 'Le contenu est pas encore publié.' !!} --}}
                     {!! $model ? ($model->descriptionAr != '' ? $model->descriptionAr : $model->description) : 'لم يتم نشر المحتوى بعد.' !!}
                 @endif
             </div>
