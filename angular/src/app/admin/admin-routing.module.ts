@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: '', component: AdminComponent,
     children: [
-      { path: '', redirectTo: 'article', pathMatch: 'full'},
+      { path: '', redirectTo: 'editor', pathMatch: 'full'},
 
       { path: 'article', loadChildren: () => import('./president/shared.module').then(m => m.SharedModule), },
       { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule), },
