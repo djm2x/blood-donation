@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
@@ -7,7 +9,7 @@ use Illuminate\Support\Facades\URL;
 class FilesController extends Controller
 {
 
-    public function uploadFiles(Request $request, string $folder) // : Collection
+    public function uploadFiles2(Request $request, string $folder) // : Collection
 
     {
         // $request->validate([
@@ -25,7 +27,7 @@ class FilesController extends Controller
             // Storage::disk('public')->put($filename, 'Contents');
             // php artisan storage:link
 
-            $file->move(public_path(str_replace('_','\\', $folder)), $filename);
+            $file->move(public_path(str_replace('_', '\\', $folder)), $filename);
 
             return response()->json(["message" => "Image Uploaded Succesfully"]);
         } else {
@@ -42,16 +44,14 @@ class FilesController extends Controller
 
         if ($file->move(public_path($folder), $filename)) {
             return json_encode($this->addImage($folder, $filename));
-        }
-        else{
-             return json_encode(['response' => 'error']);
-
+        } else {
+            return json_encode(['response' => 'error']);
         }
     }
 
     public function addImage($folder, $filename)
     {
-        $path = request()->getSchemeAndHttpHost().'/'.$folder.'/'.$filename;
+        $path = request()->getSchemeAndHttpHost() . '/' . $folder . '/' . $filename;
 
         // if (Image::create(['name'=>$filename, 'path'=>$path])) {
 
@@ -81,14 +81,14 @@ class FilesController extends Controller
 
         $filenames = $request->input('filenames');
         $folder = $request->input('folder');
-        $folder = str_replace('_','\\', $folder);
+        $folder = str_replace('_', '\\', $folder);
         $filesDeleted = "";
-        foreach ($filenames as $file){
+        foreach ($filenames as $file) {
             // Storage::disk('public')->delete("{$folder}/{$file}");
             File::delete("{$folder}/{$file}");
 
 
-            $filesDeleted.= "{$folder}/{$file};";
+            $filesDeleted .= "{$folder}/{$file};";
         }
 
         return [
@@ -96,8 +96,7 @@ class FilesController extends Controller
         ];
     }
 
-    public function uploadFiles2(Request $request, string $folder) // : Collection
-
+    public function uploadFiles(Request $request, string $folder) // : Collection
     {
         $request->validate([
             // 'file' => 'required|mimes:pdf,xlx,csv|max:2048',
@@ -124,7 +123,12 @@ class FilesController extends Controller
                 $file->move(public_path(str_replace('_', '\\', $folder)), $filename2);
             }
 
-            return response()->json(["message" => "Image Uploaded Succesfully", "names" => $names]);
+            // return response()->json(["message" => "Image Uploaded Succesfully", "names" => $names]);
+            return [
+                "message" => "Image Uploaded Succesfully", 
+                "names" => $names,
+                "files" => $files,
+            ];
         } else {
             return response()->json(["message" => "Select image first."]);
         }
