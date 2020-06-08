@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Session;
-use File;
-class HomeController extends Controller
+use App\galerie;
+class HomeController extends SuperController
 {
     /**
      * Create a new controller instance.
@@ -13,9 +12,9 @@ class HomeController extends Controller
      * @return void
      */
 
-    public function __construct()
+    public function __construct(galerie $model)
     {
-        // $this->middleware('auth');
+        parent::__construct($model);
     }
 
     /**
@@ -25,22 +24,30 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        return view('page/home');
-    }
+        $model = $this->_context
+            ->where('title', 'LIKE', "%divers%")
+            ->first()
+            ;
 
-    public function admin()
-    {
-        return File::get(public_path() . '/index2.html');
-    }
+        $images = explode(";", $model->imageUrl);
+        array_pop($images);
 
-    public function testApi()
-    {
-        return [
-            "bnr1" => "2464068867179663_2495149740738242",
-            "bnr2" => "2464068867179663_2495149934071556",
-            "inter1" => "2464068867179663_2495150220738194",
-            "inter2" => "2464068867179663_2495150424071507"
-        ];
+        $groupes = [];
+        $groupe = [];
+        $i = 0;
+
+        foreach ($images as $index => $value) {
+            if (($index + 1) % 4 !== 0) {
+                array_push($groupe, $value);
+            } else {
+                array_push($groupe, $value);
+                $groupes[$i] = $groupe;
+                $groupe = [];
+                $i ++;
+            }
+        }
+
+        dd($groupes);
+        return view('page/home', compact('groupes'));
     }
 }
