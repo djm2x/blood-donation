@@ -82,13 +82,13 @@ class FilesController extends Controller
         $filenames = $request->input('filenames');
         $folder = $request->input('folder');
 
-        $folder = str_replace('_', '\\', $folder);
+        // $folder = str_replace('_', '/', $folder);
         $filesDeleted = [];
-        foreach ($filenames as $file) {
+        foreach ($filenames as $filename) {
             // Storage::disk('public')->delete("{$folder}/{$file}");
-            File::delete("{$folder}/{$file}");
+            File::delete(public_path(str_replace('_', '/', $folder))."/{$filename}");
 
-            array_push($filesDeleted, "{$folder}/{$file}");
+            array_push($filesDeleted, "{$folder}/{$filename}");
         }
 
         return [
@@ -118,9 +118,9 @@ class FilesController extends Controller
                 $filename = $file->getClientOriginalName();
                 // $extension = $file->getClientOriginalExtension();
 
-                $file->move(public_path(str_replace('_', '\\', $folder)), $filename);
+                $file->move(public_path(str_replace('_', '/', $folder)), $filename);
 
-                array_push($filesAdded, str_replace('_', '\\', $folder)."/{$filename}");
+                array_push($filesAdded, str_replace('_', '/', $folder)."/{$filename}");
             }
             
             return [
