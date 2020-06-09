@@ -11,6 +11,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'article', pathMatch: 'full'},
 
       { path: 'article', loadChildren: () => import('./president/shared.module').then(m => m.SharedModule), },
+      { path: 'actualite', loadChildren: () => import('./actualite/shared.module').then(m => m.SharedModule), },
       // { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule), },
       { path: 'planification', loadChildren: () => import('./planification/shared.module').then(m => m.SharedModule), },
       { path: 'activite', loadChildren: () => import('./activite/activite.module').then(m => m.ActiviteModule), },

@@ -63,6 +63,8 @@ Route::group(['middleware' => 'auth.jwt'], function () {
     Route::get('/blogs/getList/{startIndex}/{pageSize}/{sortBy}/{sortDir}', 'BlogController@getAll');
     Route::apiResource('blogs', 'BlogController');
 
+    
+
     //contacts
     Route::get('/contacts/getList/{startIndex}/{pageSize}/{sortBy}/{sortDir}', 'ContactController@getList');
     // Route::apiResource('contacts', 'ContactController');
@@ -76,7 +78,14 @@ Route::group(['middleware' => 'auth.jwt'], function () {
     Route::get('/newsLetter/{id}', 'NewsLetterController@show');
     Route::delete('/newsLetter/{id}', 'NewsLetterController@destroy');
     Route::put('/newsLetter/{id}', 'NewsLetterController@update');
+    //actualite
+    Route::get('/actualites/getList/{startIndex}/{pageSize}/{sortBy}/{sortDir}', 'ActualiteController@getAll');
+    Route::apiResource('actualites', 'ActualiteController');
 });
+
+//actulaite
+Route::get('/actualites/pageApi/{startIndex}/{pageSize}', 'ActualiteController@pageApi');
+Route::get('/actualites/news/{count}', 'ActualiteController@news');
 
 Route::post('/contacts', 'ContactController@store');
 Route::post('/newsLetter', 'NewsLetterController@store');

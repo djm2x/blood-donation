@@ -67,6 +67,16 @@ export class President {
   imageUrl = '';
 }
 
+export class Actualite {
+  id = 0;
+  title = '';
+  titleAr = '';
+  description = '';
+  descriptionAr = '';
+  date = new Date();
+  imageUrl = '';
+}
+
 export class Blog {
   id = 0;
   title = '';

@@ -37,6 +37,7 @@ return [
     'FAQ' => 'التعليمات',
     //
     'NosActivies' => 'أنشطتنا',
+    'Actualite' => 'أخبار',
     'Galerie' => 'عرض',
     'Contact' => 'اتصل بنا',
     //

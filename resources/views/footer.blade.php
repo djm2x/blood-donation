@@ -12,22 +12,20 @@
         <div class="col-md-3 mt-5 images">
             <h5 class="font-weight-bold text-uppercase" style="color: white;">@lang('footer.alaune')</h5>
 
-            <div class="row">
-                <a href="#">
+            <div id="news" class="row">
+                {{-- <a href="#" class="col-md-6 p-0">
                     <img alt="" src="/images/f1.jpg"/>
                 </a>
-                <a href="#">
+                <a href="#" class="col-md-6 p-0">
                     <img alt="" src="/images/f2.jpg"/>
                 </a>
-            </div>
-
-            <div class="row">
-                <a href="#">
+            
+                <a href="#" class="col-md-6 p-0">
                     <img alt="" src="/images/f3.jpg"/>
                 </a>
-                <a href="#">
+                <a href="#" class="col-md-6 p-0">
                     <img alt="" src="/images/f4.jpg"/>
-                </a>
+                </a> --}}
             </div>
         </div>
 
@@ -76,9 +74,67 @@
 
 </section>
 
-
+@section('scripts-footer')
 
     <script>
+        //
+        const spinner2 = `<div class="2-border text-success m-5" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>`;
+
+        window.addEventListener("DOMContentLoaded", () => {
+            console.log('DOMContentLoaded')
+            getPage();
+        });
+
+        async function getPage() {
+            get(`#news`).innerHTML = spinner2;
+
+            try {
+                const r = await axios.get(`/api/actualites/news/4`);
+                const list = r.data.list;
+
+                console.log('fouter>>>')
+                console.log(r)
+                console.log('fouter<<<<')
+
+                if (list) {
+                    get(`#news`).innerHTML = '';
+                    get(`#news`).innerHTML = populate2(list);
+                }
+
+            } catch (e) {
+                // try {
+                //     e.response?.data ? console.warn(e.response?.data) : console.warn(e);
+                // } catch (error) {
+                // }
+                console.warn(e)
+
+            }
+        }
+                                                            
+        /**
+         * @param {date: Date, titre: string}[] data
+         * @returns {void}
+         */
+        function populate2(data) {
+            let html = ''
+            data.forEach((e, i) => {
+                html +=
+                    `<a href="/actualites/${e.id}" class="col-md-6 p-0">
+                        <img src="actualites/${e.imageUrl?.replace(';', '')}" onerror="this.onerror=null;this.src='/images/404.png';" class="w-100">
+                    </a>`;
+            });
+
+            return html;
+        }
+
+        /**
+         * @returns {ParentNode} element
+         */
+        function get(selector) {
+            return document.querySelector(selector)
+        }    
         const newletterForm = document.getElementById('newletterForm');
         const msg = document.getElementById('msg');
 
@@ -105,5 +161,8 @@
                 e.response ? console.warn(e.response.data) : console.warn(e);
             }
         });
+
+        
     </script>
 
+@stop

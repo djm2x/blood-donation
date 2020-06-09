@@ -36,6 +36,7 @@ return [
     'FAQ' => 'FAQ',
     //
     'NosActivies' => 'Nos Activiés',
+    'Actualite' => 'Actualité',
     'Galerie' => 'Galerie',
     'Contact' => 'Contact',
     //

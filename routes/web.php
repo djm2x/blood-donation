@@ -26,6 +26,9 @@ Route::get('/galerie', 'GalerieController@list')->name('galerie');
 Route::get('/detail-galerie/{id}', 'GalerieController@detail')->name('detail-galerie');
 Route::get('/contact', 'ContactController@create')->name('contact');
 
+Route::get('/actualites', 'ActualiteController@page')->name('actualite');
+Route::get('/actualites/{id}', 'ActualiteController@detail');
+
 Route::get('/phpinfo', function() {
     return phpinfo();
 });

@@ -135,7 +135,7 @@ class SuperController extends Controller
 
     public function show($id)
     {
-        return $this->_context->findById($id);
+        return $this->_context->find($id);
     }
 
     public function update(Request $request, $id)

@@ -13,6 +13,7 @@ import { GalerieService } from './galerie.service';
 import { BlogService } from './blog.service';
 import { ContactService } from './contact.service';
 import { SuperService } from './super.service';
+import { ActualiteService } from './actualite.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,7 @@ export class UowService {
   presidents = new PresidentService();
   planifications = new PlanificationService();
   activites = new ActiviteService();
+  actualites = new ActualiteService();
   galeries = new GalerieService();
   blogs = new BlogService();
   contacts = new ContactService();
