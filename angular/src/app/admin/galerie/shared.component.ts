@@ -98,7 +98,7 @@ export class SharedComponent implements OnInit {
     if (r === 'ok') {
       this.uow.galeries.delete(o.id).subscribe(() => this.update.next(true));
 
-      const d = await this.uow.files.deleteFiles([o.imageUrl.replace(';', '')], 'galeries').toPromise();
+      const d = await this.uow.files.deleteFiles([...o.imageUrl.split(';')].filter(e => e !== ''), `galeries_${o.id}`).toPromise();
       console.log(d);
     }
   }

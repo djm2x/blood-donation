@@ -81,18 +81,19 @@ class FilesController extends Controller
 
         $filenames = $request->input('filenames');
         $folder = $request->input('folder');
+
         $folder = str_replace('_', '\\', $folder);
-        $filesDeleted = "";
+        $filesDeleted = [];
         foreach ($filenames as $file) {
             // Storage::disk('public')->delete("{$folder}/{$file}");
             File::delete("{$folder}/{$file}");
 
-
-            $filesDeleted .= "{$folder}/{$file};";
+            array_push($filesDeleted, "{$folder}/{$file}");
         }
 
         return [
-            'message' => count($filenames) == 0 ? "empty files {$filesDeleted}" : "delete successfuly {$filesDeleted}",
+            'message' => count($filenames) == 0 ? "empty files" : "delete successfuly",
+            'fileDeleted' => $filesDeleted,
         ];
     }
 
@@ -105,50 +106,31 @@ class FilesController extends Controller
 
         $allowedfileExtension = ['pdf', 'jpg', 'png', 'docx'];
 
-        $length =  $request->length;
+        $length =  $request->get('length');
+        
         if ($length != 0/*$request->hasFile('file0')*/) {
 
-            $names = '';//$files->getClientOriginalName();
+            $filesAdded = [];
             for ($i=0; $i < $length; $i++) {
 
                 $file = $request->file("file{$i}");
 
                 $filename = $file->getClientOriginalName();
+                // $extension = $file->getClientOriginalExtension();
 
                 $file->move(public_path(str_replace('_', '\\', $folder)), $filename);
 
-                $names .= public_path(str_replace('_', '\\', $folder)) .'/'. $filename;
+                array_push($filesAdded, str_replace('_', '\\', $folder)."/{$filename}");
             }
-            // $files = $request->file('file');
-
-
-            // $i = 0;
-
-            // foreach ($files as $file) {
-
-            //     $filename = $file->getClientOriginalName();
-            //     // $extension = $file->getClientOriginalExtension();
-            //     // $check=in_array($extension,$allowedfileExtension);
-            //     // $filename2 = $file->store('public/recipe_images/');
-
-            //     // $picture = date('His') . '-' . $filename;
-
-            //     // Storage::disk('public')->put($filename, 'Contents');
-            //     // php artisan storage:link
-            //     $i++;
-
-            //     $file->move(public_path(str_replace('_', '\\', $folder)), $filename2);
-            // }
-
-            // return response()->json(["message" => "Image Uploaded Succesfully", "names" => $names]);
+            
             return [
-                "message" => "Image Uploaded Succesfully", 
-                "names" => $names,
+                "message" => "Images Uploaded Succesfully", 
+                "filesUploaded" => $filesAdded,
                 // "files" => $files,
-                "i" => $i,
+                // "i" => $i,
             ];
         } else {
-            return response()->json(["message" => "Select image first.", 'lenght' => $length]);
+            return ["message" => "Select image first.", 'filesUploaded' => $length];
         }
     }
 }
