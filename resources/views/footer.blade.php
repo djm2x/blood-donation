@@ -4,37 +4,31 @@
 
     <div class="{{ app()->getLocale() == 'fr' ? 'row text-left' : 'row text-right' }}">
         <div class="col-md-3 mt-5">
-            <img class="mb-2" height="80" src="/images/icon.jpg" width="80" />
+            <a href="/">
+                <img class="mb-2" height="80" src="/images/icon.jpg" width="80" />
+            </a>
             <p>@lang('footer.EnsavoirplussurnousText')</p>
-            <a class="font-weight-bold text-white" href="/">@lang('footer.Ensavoirplussurnous')</a>
+            <a class="font-weight-bold text-white" href="/cntsh/missions">@lang('footer.Ensavoirplussurnous')</a>
         </div>
 
         <div class="col-md-3 mt-5 images">
-            <h5 class="font-weight-bold text-uppercase" style="color: white;">@lang('footer.alaune')</h5>
+            <a href="/actualites" class="pl-0">
+                <h5 class="font-weight-bold text-uppercase" style="color: white;">@lang('footer.alaune')</h5>
+            </a>
 
-            <div id="news" class="row">
-                {{-- <a href="#" class="col-md-6 p-0">
-                    <img alt="" src="/images/f1.jpg"/>
-                </a>
-                <a href="#" class="col-md-6 p-0">
-                    <img alt="" src="/images/f2.jpg"/>
-                </a>
-            
-                <a href="#" class="col-md-6 p-0">
-                    <img alt="" src="/images/f3.jpg"/>
-                </a>
-                <a href="#" class="col-md-6 p-0">
-                    <img alt="" src="/images/f4.jpg"/>
-                </a> --}}
+            <div id="news" class="row pl-2">
             </div>
         </div>
 
         <div class="col-md-3 mt-5 ">
-            <h5 class="font-weight-bold text-white text-uppercase">@lang('footer.nouscontacter')</h5>
-            <p>@lang('footer.nouscontacterText')</p>
-            <p style="margin: 0;"><i class="fas fa-map-marker-alt"></i>  quelque hasard adresse</p>
-            <p style="margin: 0;"><i class="fas fa-mobile-alt"></i>  02020202</p>
-            <p style="margin: 0;"><i class="fas fa-envelope"></i>  email@angular.io</p>
+            <a href="/contact" class="pl-0">
+                <h5 class="font-weight-bold text-white text-uppercase">@lang('footer.nouscontacter')</h5>
+            </a>
+
+            {{-- <p>@lang('footer.nouscontacterText')</p> --}}
+            <p style="margin: 0;"><i class="fas fa-map-marker-alt"></i> 472, rue Mfadel Cherkaoui, q. Al Irfane RABAT</p>
+            <p style="margin: 0;"><i class="fas fa-mobile-alt"></i> 05 37 77 49 93</p>
+            <p style="margin: 0;"><i class="fas fa-envelope"></i> email@angular.io</p>
             <!-- <i class="fa fa-map-marker" aria-hidden="true"></i>  -->
         </div>
 
@@ -121,7 +115,7 @@
             let html = ''
             data.forEach((e, i) => {
                 html +=
-                    `<a href="/actualites/${e.id}" class="col-md-6 p-0">
+                    `<a href="/actualites/${e.id}" class=" p-0" style="width: 120px">
                         <img src="actualites/${e.imageUrl?.replace(';', '')}" onerror="this.onerror=null;this.src='/images/404.png';" class="w-100">
                     </a>`;
             });

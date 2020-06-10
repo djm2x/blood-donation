@@ -5,6 +5,7 @@
     @lang('menu.Actualite')
 @stop
 @section('content')
+
 <section class="actualite">
 
     <div class="container flex-column d-flex justify-content-center align-items-center">
@@ -19,22 +20,27 @@
         </div> --}}
 
 
-        <div class="d-flex justify-content-center align-items-center flex-wrap p-2 mt-5 w-100">
+        <div class="d-flex justify-content-center align-items-center flex-wrap p-2 mt-3 w-100">
             <div class="col-md-12"  id="blogList">
             @foreach($list as $e)
                 <div class="row">
                     <div class="col-md-5">
-                        <img src="{{url('actualite/'.str_replace(';', '', $e->imageUrl))}}"
-                        onerror="this.onerror=null;this.src='/images/404.png';" class="w-100" style="height: 180px;">
+                        <a href="{{url('actualites/'.$e->id)}}   ">
+                            <img src="{{url('actualite/'.str_replace(';', '', $e->imageUrl))}}"
+                                onerror="this.onerror=null;this.src='/images/404.png';" class="w-100" style="height: 180px;">
+                        </a>
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-md-7 d-flex justify-content-between flex-column">
+                        <p style="font-size: 1.2em">{{date('d-m-Y', strtotime($e->date))}}</p>
                         <p style="font-size: 1.2em">{{$e->title}}</p>
+                        <div class="d-flex flex-row-reverse mt-5 mt-auto">
+                            <a class="btn btn-danger mybtn text-uppercase" href="{{url('actualites/'.$e->id)}}   ">
+                                <span style="font-size: 1.1em;">plus d'info...</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="d-flex flex-row-reverse mt-5  mb-2">
-                    <a href="{{url('actualites/'.$e->id)}}   "><span style="font-size: 1.1em;">Continue a Lire</span></a>
-                </div>
                 <hr>
             @endforeach
             </div>
@@ -97,16 +103,18 @@
                     `
                     <div class="row">
                         <div class="col-md-5">
-                            <img src="actualites/${e.imageUrl?.replace(';', '')}"
-                            onerror="this.onerror=null;this.src='/images/404.png';" class="w-100" style="height: 180px;">
+                            <a href="/actualites/${e.id}">
+                                <img src="actualites/${e.imageUrl?.replace(';', '')}"
+                                    onerror="this.onerror=null;this.src='/images/404.png';" class="w-100" style="height: 180px;">
+                            </a>
                         </div>
                         <div class="col-md-7">
                             <p style="font-size: 1.2em">${e.title}</p>
                         </div>
                     </div>
 
-                    <div class="d-flex flex-row-reverse mt-2  mb-2">
-                        <a href="/actualites/${e.id}"><span style="font-size: 1.1em;">Continue a Lire</span></a>
+                    <div class="btn btn-danger mybtn text-uppercase" class="d-flex flex-row-reverse mt-2  mb-2">
+                        <a href="/actualites/${e.id}"><span style="font-size: 1.1em;">plus d'info...</span></a>
                     </div>
                 `;
             });

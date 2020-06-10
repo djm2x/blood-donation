@@ -99,7 +99,7 @@ function populate(data) {
                                     ${e.description.substring(0, 50)} ...
                                 </p>
                                 <div class="d-flex flex-row-reverse justify-content-between align-items-center mt-3">
-                                    <a class="btn btn-danger text-uppercase"  href="activite/${e.id}">${translate}...</a>
+                                    <a class="btn btn-danger mybtn text-uppercase"  href="activite/${e.id}">${translate}...</a>
                                 </div>
                             </div>
                         </div>

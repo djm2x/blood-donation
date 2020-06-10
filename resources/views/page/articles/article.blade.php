@@ -27,6 +27,8 @@
             width: 100%;
         }
     }
+
+    p { margin: 0;}
 </style>
     {{-- {{$list}} --}}
 <section class="{{ app()->getLocale() == 'fr' ? 'president text-left' : 'president text-right' }}">

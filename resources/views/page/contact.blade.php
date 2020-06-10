@@ -46,7 +46,7 @@
                                 <textarea id="message" class="form-control" rows="3" required></textarea>
                             </div>
                             <div class="d-flex flex-row-reverse">
-                                <button type="submit" class="btn btn-primary">@lang('page.Envoyer')</button>
+                                <button type="submit" class="btn btn-danger mybtn">@lang('page.Envoyer')</button>
                             </div>
                         </div>
                     </div>

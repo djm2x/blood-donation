@@ -15,6 +15,13 @@
 
     @yield('styles')
 
+    <style>
+        .mybtn {
+            padding: 2px 2px;
+            font-size: .8em;
+        }
+    </style>
+
 
 </head>
 

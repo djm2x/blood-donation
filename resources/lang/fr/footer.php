@@ -2,12 +2,12 @@
 
 return [
     'Ensavoirplussurnous' => 'En savoir plus sur nous',
-    'EnsavoirplussurnousText' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    'EnsavoirplussurnousText' => 'CENTRE NATIONAL DE TRANSFUSION SANGUINE',
     'alaune' => 'a la une',
     'nouscontacter' => 'nous contacter',
     'nouscontacterText' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, dolore magna aliqua. Ut enim ad minim veniam',
     'newsletter' => 'newsletter',
-    'newsletterText' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, dolore magna aliqua. Ut enim ad minim veniam',
+    'newsletterText' => 'Recevez par mail toute l’actualité du CNTSH',
     'email' => 'Email',
     'subscribe' => 'subscribe',
     '2020CentrenationaldetransfusionSanguineToutdroitreserver' => '2020 Centre national de transfusion Sanguine, Tout droit réserver',
