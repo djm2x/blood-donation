@@ -3,7 +3,7 @@
 
 
     <div class="{{ app()->getLocale() == 'fr' ? 'row text-left' : 'row text-right' }}">
-        <div class="col-md-3 mt-5">
+        <div class="col-md-4 mt-5">
             <a href="/">
                 <img class="mb-2" height="80" src="/images/icon.jpg" width="80" />
             </a>
@@ -11,16 +11,9 @@
             <a class="font-weight-bold text-white" href="/cntsh/missions">@lang('footer.Ensavoirplussurnous')</a>
         </div>
 
-        <div class="col-md-3 mt-5 images">
-            <a href="/actualites" class="pl-0">
-                <h5 class="font-weight-bold text-uppercase" style="color: white;">@lang('footer.alaune')</h5>
-            </a>
+       
 
-            <div id="news" class="row pl-2">
-            </div>
-        </div>
-
-        <div class="col-md-3 mt-5 ">
+        <div class="col-md-4 mt-5 ">
             <a href="/contact" class="pl-0">
                 <h5 class="font-weight-bold text-white text-uppercase">@lang('footer.nouscontacter')</h5>
             </a>
@@ -32,7 +25,7 @@
             <!-- <i class="fa fa-map-marker" aria-hidden="true"></i>  -->
         </div>
 
-        <div class="col-md-3 mt-5">
+        <div class="col-md-4 mt-5">
             <h5 class="font-weight-bold text-white text-uppercase">@lang('footer.newsletter')</h5>
 
             <p>@lang('footer.newsletterText')</p>
@@ -71,64 +64,7 @@
 @section('scripts-footer')
 
     <script>
-        //
-        const spinner2 = `<div class="2-border text-success m-5" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>`;
-
-        window.addEventListener("DOMContentLoaded", () => {
-            console.log('DOMContentLoaded')
-            getPage();
-        });
-
-        async function getPage() {
-            get(`#news`).innerHTML = spinner2;
-
-            try {
-                const r = await axios.get(`/api/actualites/news/4`);
-                const list = r.data.list;
-
-                console.log('fouter>>>')
-                console.log(r)
-                console.log('fouter<<<<')
-
-                if (list) {
-                    get(`#news`).innerHTML = '';
-                    get(`#news`).innerHTML = populate2(list);
-                }
-
-            } catch (e) {
-                // try {
-                //     e.response?.data ? console.warn(e.response?.data) : console.warn(e);
-                // } catch (error) {
-                // }
-                console.warn(e)
-
-            }
-        }
-                                                            
-        /**
-         * @param {date: Date, titre: string}[] data
-         * @returns {void}
-         */
-        function populate2(data) {
-            let html = ''
-            data.forEach((e, i) => {
-                html +=
-                    `<a href="/actualites/${e.id}" class=" p-0" style="width: 120px">
-                        <img src="actualites/${e.imageUrl?.replace(';', '')}" onerror="this.onerror=null;this.src='/images/404.png';" class="w-100">
-                    </a>`;
-            });
-
-            return html;
-        }
-
-        /**
-         * @returns {ParentNode} element
-         */
-        function get(selector) {
-            return document.querySelector(selector)
-        }    
+         
         const newletterForm = document.getElementById('newletterForm');
         const msg = document.getElementById('msg');
 

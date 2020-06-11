@@ -24,15 +24,15 @@
             <div class="col-md-12"  id="blogList">
             @foreach($list as $e)
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-3">
                         <a href="{{url('actualites/'.$e->id)}}   ">
-                            <img src="{{url('actualite/'.str_replace(';', '', $e->imageUrl))}}"
-                                onerror="this.onerror=null;this.src='/images/404.png';" class="w-100" style="height: 180px;">
+                            <img src="{{url('actualite/'.str_replace(';', '', $e->imageUrl))}}" onerror="this.onerror=null;this.src='/images/404.png';" class="w-100" style="height: 150px;">
                         </a>
                     </div>
-                    <div class="col-md-7 d-flex justify-content-between flex-column">
-                        <p style="font-size: 1.2em">{{date('d-m-Y', strtotime($e->date))}}</p>
-                        <p style="font-size: 1.2em">{{$e->title}}</p>
+                    <div class="col-md-9 d-flex justify-content-between flex-column">
+                        <p class="m-0" style="font-size: 1.1em; font-weight: 700">{{$e->title}}</p>
+                        <p class="text-muted" style="font-size: 1.1em"><i class="far fa-calendar-alt"></i> {{date('d/m/Y', strtotime($e->date))}}</p>
+                        <p style="font-size: 1.1em">{{substr(strip_tags($e->description),0,100)}} ...</p> 
                         <div class="d-flex flex-row-reverse mt-5 mt-auto">
                             <a class="btn btn-danger mybtn text-uppercase" href="{{url('actualites/'.$e->id)}}   ">
                                 <span style="font-size: 1.1em;">plus d'info...</span>

@@ -29,21 +29,106 @@
     <section class="news pb-2 h-100">
         <div class="card w-100 h-100" style="border-radius: 0">
             <div class="card-body">
-                <h5 class="card-title">Test</h5>
+                <a href="/actualites" class="text-dark">
+                    <h5 class="card-title">@lang('menu.Actualite')</h5>
+                </a>
                 <h6 class="card-subtitle mb-2" style="width: 30%">
                     <hr class="m-0">
                     <hr class="m-0">
                     <hr class="m-0">
                 </h6>
-                <div id="newsTopThree" class="d-flex flex-column justify-content-between align-items-center">
-
+                <div class="d-flex flex-column" id="news" class="row pl-2">
+                    
                 </div>
+                
             </div>
         </div>
     </section>
 </section>
 @section('scripts-sidenav')
 <script>
+
+    //
+    const spinner2 = `<div class="2-border text-success m-5" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>`;
+
+        window.addEventListener("DOMContentLoaded", () => {
+            console.log('DOMContentLoaded')
+            getPage();
+        });
+
+        async function getPage() {
+            get(`#news`).innerHTML = spinner2;
+
+            try {
+                const r = await axios.get(`/api/actualites/news/5`);
+                const list = r.data.list;
+
+                console.log('fouter>>>')
+                console.log(r)
+                console.log('fouter<<<<')
+
+                if (list) {
+                    get(`#news`).innerHTML = '';
+                    get(`#news`).innerHTML = populate2(list);
+                }
+
+            } catch (e) {
+                // try {
+                //     e.response?.data ? console.warn(e.response?.data) : console.warn(e);
+                // } catch (error) {
+                // }
+                console.warn(e)
+
+            }
+        }
+                                                            
+        /**
+         * @param {date: Date, titre: string}[] data
+         * @returns {void}
+         */
+        function populate2(data) {
+            let html = ''
+            data.forEach((e, i) => {
+                html +=
+                    `<div class="mb-3">
+                        <a href="/actualites/${e.id}" class="text-dark">
+                            <p style="font-size: 1.1em" class=" m-0">${e.title}</p>
+                        </a>
+                        <p class="text-muted m-0" style="font-size: .9em">
+                            <i class="far fa-calendar-alt"></i> ${dateFormat(new Date(e.date))}
+                        </p>
+                        
+                    </div>
+                    `;
+
+                    // <p class="text-muted m-0 mb-3" style="font-size: .6em">
+                    //         ${e.description.toString().substring(0, 500)} ...
+                    //         ${new DOMParser().parseFromString(e.description, "text/html")} ...
+                    //     </p>
+            });
+
+            return html;
+        }
+
+        function dateFormat(date) {
+            let month = `${date.getMonth() + 1}`
+            let day = `${date.getDate()}`
+            let year = `${date.getFullYear()}`
+
+            month = `${month.length === 1 ? '0' + month : month}`;
+            day = `${day.length === 1 ? '0' + day : day}`;
+
+            return `${day}/${month}/${year}`;
+        }
+
+        /**
+         * @returns {ParentNode} element
+         */
+        function get(selector) {
+            return document.querySelector(selector)
+        }   
     // const spinner = `<div class="spinner-border text-success m-5" role="status">
     //                     <span class="sr-only">Loading...</span>
     //                 </div>`;

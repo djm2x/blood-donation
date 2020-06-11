@@ -51,10 +51,10 @@
                 <span class="d-none d-md-block">@lang('page.elementparpage')&nbsp;:&nbsp;</span>
                 <select class="form-control" id="pageSize" style="width:75px">
                     {{-- <option value="6">6 </option> --}}
-                    <option value="12">12 </option>
-                    <option value="24">24 </option>
-                    <option value="50">50 </option>
-                    <option value="100">100 </option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
                 </select>
 
                 <span class="d-flex ml-2 mr-4">

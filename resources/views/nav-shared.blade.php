@@ -71,9 +71,9 @@
     <li class="nav-item">
         <a class="{{ request()->is('activite') ? 'nav-link active' : 'nav-link' }}" href="{{ route('activite') }}">@lang('menu.NosActivies')</a>
     </li>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="{{ request()->is('actualite') ? 'nav-link active' : 'nav-link' }}" href="{{ route('actualite') }}">@lang('menu.Actualite')</a>
-    </li>
+    </li> --}}
     <li class="nav-item">
         <a class="{{ request()->is('galerie') ? 'nav-link active' : 'nav-link' }}" href="{{ route('galerie') }}">@lang('menu.Galerie')</a>
     </li>

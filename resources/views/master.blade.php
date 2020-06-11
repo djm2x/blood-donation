@@ -35,16 +35,16 @@
     <main class="main">
         <div class="{{ request()->is('/') ? '' : 'container' }}">
             <div class="row">
-                <div class="{{ request()->is('/') ? 'col-md-12' : 'col-sm-12 col-md-8 p-0' }}">
+                <div class="{{ request()->is('/') || strpos(Request::path(), 'actualites') === 0 ? 'col-md-12' : 'col-sm-12 col-md-8 p-0' }}">
                     @include('title')
-                    
+                    {{-- {{strpos(Request::path(), 'actualites')}} --}}
                     <div class="{{ request()->is('/') ? 'm-0' : 'ml-2 mr-2' }}">
                         @yield('content')
                     </div>
                 </div>
 
-                <div class="col-sm-12 col-md-4 p-0">
-                    @if (!request()->is('/'))
+                <div class="col-sm-12 col-md-4">
+                    @if (!request()->is('/') && strpos(Request::path(), 'actualites') === false)
                         @include('sidenav')
                     @endif
                 </div>
@@ -87,6 +87,7 @@
     </script>
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('scripts-footer')
+    @yield('scripts-sidenav')
     @yield('scripts')
 
 </body>

@@ -36,9 +36,9 @@ return [
     'FAQ' => 'FAQ',
     //
     'NosActivies' => 'Nos Activiés',
-    'Actualite' => 'Actualité',
+    'Actualite' => 'Actualités',
     'Galerie' => 'Galerie',
     'Contact' => 'Contact',
     //
-    'Recherche' => 'Recherche',
+    'Recherche' => 'Recherche', 
 ];
