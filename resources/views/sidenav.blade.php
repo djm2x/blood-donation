@@ -1,66 +1,64 @@
 
  <style>
-    .date {
-        position: relative;
+    .card {
+        padding: 0;
+        border-radius: 0;
+
     }
 
-    .date::before {
-        content: '';
-        background-image: url('images/dashed.png');
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        z-index: -1;
+    .card-body {
+        padding: 0 1.25rem;
+    }
+    .card-title {
+        padding-top: 1.25rem;
     }
 
-    .init-ancre {
-        color: #000000;
-        text-decoration: none;
-        /* background-color: transparent; */
+    .card-title h5{
+        /* padding-let: 1.25rem; */
+        background-color: #4c4c4c;
+        font-weight: 100;
+        padding: 5px;
     }
-    .init-ancre:hover {
-        color: #000000;
-        text-decoration: none;
+
+    .card-title a{
+        padding-left: calc(1.25rem - 5px) ;
+        color: white;
+        /* background-color: gray; */
     }
  </style>
 
 
 <section class="sidenav h-100">
-    <section class="news pb-2">
-        <div class="card w-100" style="border-radius: 0">
-            <div class="card-body">
-                <a href="/actualites" class="text-dark">
-                    <h5 class="card-title">@lang('menu.Actualite')</h5>
-                </a>
-                <h6 class="card-subtitle mb-2" style="width: 30%">
-                    <hr class="m-0">
-                    <hr class="m-0">
-                    <hr class="m-0">
-                </h6>
-                <div class="d-flex flex-column" id="news" class="row pl-2">
-                    
-                </div>
-            </div>
+    <div class="card mb-2">
+        <video  width="100%"  controls >
+            <source src="{{ asset('videos/spot_publicitaire.mp4') }}" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <div class="card mb-2">
+        <div class="card-title">
+            <h5><a href="/actualites">@lang('menu.Actualite')</a></h5>
         </div>
-    </section>
-    <section class="news pb-2">
-        <div class="card w-100" style="border-radius: 0; height: 45vh;">
-            <div class="card-body">
-                <a href="/actualites" class="text-dark">
-                    <h5 class="card-title">Test</h5>
-                </a>
-                <h6 class="card-subtitle mb-2" style="width: 30%">
-                    <hr class="m-0">
-                    <hr class="m-0">
-                    <hr class="m-0">
-                </h6>
-                <div class="d-flex flex-column" id="news" class="row pl-2">
-                    
-                </div>
+        <div class="card-body">
+            <div class="d-flex flex-column" id="news" class="row">
                 
             </div>
         </div>
-    </section>
+    </div>
+
+
+    <div class="card mb-2" style="height: 45vh;">
+        <div class="card-title">
+            <h5><a href="/actualites">Test</a></h5>
+        </div>
+        <div class="card-body">
+            <div class="d-flex flex-column" id="news" class="row">
+                
+            </div>
+        </div>
+    </div>
+    
 </section>
 @section('scripts-sidenav')
 <script>
@@ -110,13 +108,12 @@
             data.forEach((e, i) => {
                 html +=
                     `<div class="mb-3">
-                        <a href="/actualites/${e.id}" class="text-dark">
-                            <p style="font-size: 1.1em" class=" m-0">${e.title}</p>
-                        </a>
                         <p class="text-muted m-0" style="font-size: .9em">
                             <i class="far fa-calendar-alt"></i> ${dateFormat(new Date(e.date))}
                         </p>
-                        
+                        <a href="/actualites/${e.id}" class="text-dark">
+                            <p style="font-size: 1.1em" class=" m-0">${e.title}</p>
+                        </a>
                     </div>
                     `;
 

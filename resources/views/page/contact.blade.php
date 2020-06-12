@@ -16,7 +16,7 @@
         </div>
     </div> --}}
     <div class="{{ app()->getLocale() == 'fr' ? 'text-left' : 'text-right' }}">
-        <div class="d-flex flex-wrap justify-content-center align-items-center mt-5 mb-5">
+        <div class="d-flex flex-wrap justify-content-center align-items-center mt-3 mb-3">
             <div class="col-md-6">
                 <form id="myForm">
                     <div class="row d-flex flex-column align-items-center fade show p-2 mb-5">

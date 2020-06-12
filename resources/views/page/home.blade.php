@@ -15,11 +15,11 @@
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          {{-- <li data-target="#carouselExampleCaptions" data-slide-to="2"></li> --}}
         </ol>
         <div class="carousel-inner ">
           <div class="carousel-item active">
-            <img src="images/don-du-song-1.jpg" class="d-block w-100" alt="...">
+            <img style="filter: brightness(70%);" src="images/dds01.png" class="d-block w-100" alt="...">
 
             <div class="carousel-caption d-none d-md-block">
               <h1>ON EST PLUS QU'AMIS</h1>
@@ -29,7 +29,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img src="images/don-du-song-1.jpg" class="d-block w-100" alt="...">
+            <img style="filter: brightness(70%);" src="images/dds02.png" class="d-block w-100" alt="...">
 
             <div class="carousel-caption d-none d-md-block">
               <h1>ON EST PLUS QU'AMIS</h1>
@@ -38,8 +38,8 @@
               <a class="btn btn-primary mt-5" href="http://">REJOIGNEZ-NOUS SUR FACEBOOK</a>
             </div>
           </div>
-          <div class="carousel-item">
-            <img src="images/don-du-song-1.jpg" class="d-block w-100" alt="...">
+          {{-- <div class="carousel-item">
+            <img style="filter: brightness(50%);" src="images/don-du-song-1.jpg" class="d-block w-100" alt="...">
 
             <div class="carousel-caption d-none d-md-block">
               <h1>ON EST PLUS QU'AMIS</h1>
@@ -47,7 +47,7 @@
 
               <a class="btn btn-primary mt-5" href="http://">REJOIGNEZ-NOUS SUR FACEBOOK</a>
             </div>
-          </div>
+          </div> --}}
         </div>
         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
