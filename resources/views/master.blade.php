@@ -35,15 +35,17 @@
     <main class="main">
         <div class="{{ request()->is('/') ? '' : 'container' }}">
             <div class="row">
-                <div class="{{ request()->is('/') || strpos(Request::path(), 'actualites') === 0 ? 'col-md-12' : 'col-sm-12 col-md-8 p-0' }}">
+                <div class="{{ request()->is('/') || strpos(Request::path(), 'actualites') === 0 ? 'col-md-12 mt-2' : 'col-sm-12 col-md-8 p-1 mt-1' }}">
                     @include('title')
-                    {{-- {{strpos(Request::path(), 'actualites')}} --}}
-                    <div class="{{ request()->is('/') ? 'm-0' : 'ml-2 mr-2' }}">
-                        @yield('content')
+                    {{-- {{strpos(Request::path(), 'actualites')}}   class="{{ request()->is('/') ? 'm-0' : 'ml-2 mr-2' }}"--}}
+                    <div  class="{{ request()->is('/') ? '' : 'card' }}" style="border-radius: 0">
+                        <article class="ml-2 mr-2">
+                            @yield('content')
+                        </article>
                     </div>
                 </div>
 
-                <div class="col-sm-12 col-md-4">
+                <div class="col-sm-12 col-md-4 mt-1 p-1">
                     @if (!request()->is('/') && strpos(Request::path(), 'actualites') === false)
                         @include('sidenav')
                     @endif

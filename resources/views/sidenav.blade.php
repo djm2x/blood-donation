@@ -26,11 +26,28 @@
 
 
 <section class="sidenav h-100">
-    <section class="news pb-2 h-100">
-        <div class="card w-100 h-100" style="border-radius: 0">
+    <section class="news pb-2">
+        <div class="card w-100" style="border-radius: 0">
             <div class="card-body">
                 <a href="/actualites" class="text-dark">
                     <h5 class="card-title">@lang('menu.Actualite')</h5>
+                </a>
+                <h6 class="card-subtitle mb-2" style="width: 30%">
+                    <hr class="m-0">
+                    <hr class="m-0">
+                    <hr class="m-0">
+                </h6>
+                <div class="d-flex flex-column" id="news" class="row pl-2">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="news pb-2">
+        <div class="card w-100" style="border-radius: 0; height: 45vh;">
+            <div class="card-body">
+                <a href="/actualites" class="text-dark">
+                    <h5 class="card-title">Test</h5>
                 </a>
                 <h6 class="card-subtitle mb-2" style="width: 30%">
                     <hr class="m-0">
