@@ -80,9 +80,9 @@
                 const r = await axios.get(`/api/actualites/news/5`);
                 const list = r.data.list;
 
-                console.log('fouter>>>')
-                console.log(r)
-                console.log('fouter<<<<')
+                // console.log('fouter>>>')
+                // console.log(r)
+                // console.log('fouter<<<<')
 
                 if (list) {
                     get(`#news`).innerHTML = '';

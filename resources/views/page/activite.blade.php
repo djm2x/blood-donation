@@ -10,6 +10,7 @@
         .btn {
             padding: 2px 2px;
             font-size: .8em;
+            margin-bottom: 10px;
         }
     </style>
 
