@@ -1,17 +1,24 @@
 .first {
     // background-color: rgb(61, 61, 61);
+    .container {
+        padding: 0;
+    }
     .carousel-caption {
         h1 {
             font-weight: bold;
         }
         bottom: 30%;
     }
-
+    img {
+        height: 250px;
+    }
 
 }
 
 .second {
-    background-color: #f1f5f8;
+    .container {
+        background-color: #f1f5f8;
+    }
     img {
         height: 50px;
     }
@@ -63,7 +70,9 @@
 }
 
 .temoignage {
-    background-color: #f1f5f8;
+    .container {
+        background-color: #f1f5f8;
+    }
 }
 
 .images {

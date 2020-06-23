@@ -4,9 +4,9 @@
 <section id="navtwo" style="max-height: 130px; overflow: auto;">
     <section class="navtwo d-none d-md-block">
         <div class="container">
-            <div class="row d-flex flex-wrap justify-content-between align-items-center">
+            <div class="row d-flex flex-wrap justify-content-between align-items-center" style="height: 83px">
                 <a class="navbar-brand meme" href="{{ route('home') }}">
-                    <img class="logo" src="/images/icon2.jpg" alt="" srcset="">
+                    {{-- <img class="logo" src="/images/icon2.jpg" alt="" srcset=""> --}}
                 </a>
 
                 <div class="d-flex mywith align-items-center justify-content-between ml-2">
@@ -17,8 +17,12 @@
                         </a>
                     </form>
 
+                    <a class="navbar-brand meme" href="{{ route('home') }}">
+                        <img class="logo" src="/images/icon2.jpg" alt="" srcset="" height="50px">
+                    </a>
+
                     <a class="navbar-brand d-none d-md-block" href="{{ route('home') }}">
-                        <img src="/images/sante.jpg" alt="" srcset="" style="height: 70px">
+                        <img src="/images/sante.jpg" alt="" srcset="" style="height: 50px">
                     </a>
                 </div>
             </div>

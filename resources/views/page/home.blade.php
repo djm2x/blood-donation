@@ -11,7 +11,8 @@
 
 @section('content')
 <section class="first">
-    <div id="carouselExampleCaptions" class="carousel slide " data-ride="carousel">
+    <div class="container">
+        <div id="carouselExampleCaptions" class="carousel slide " data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -25,7 +26,7 @@
               <h1>ON EST PLUS QU'AMIS</h1>
               <h5>On est donneurs de song</h5>
 
-              <a class="btn btn-primary mt-5 " href="http://">REJOIGNEZ-NOUS SUR FACEBOOK</a>
+              {{-- <a class="btn btn-primary mt-5 " href="http://">REJOIGNEZ-NOUS SUR FACEBOOK</a> --}}
             </div>
           </div>
           <div class="carousel-item">
@@ -35,7 +36,7 @@
               <h1>ON EST PLUS QU'AMIS</h1>
               <h5>On est donneurs de song</h5>
 
-              <a class="btn btn-primary mt-5" href="http://">REJOIGNEZ-NOUS SUR FACEBOOK</a>
+              {{-- <a class="btn btn-primary mt-5" href="http://">REJOIGNEZ-NOUS SUR FACEBOOK</a> --}}
             </div>
           </div>
           {{-- <div class="carousel-item">
@@ -58,6 +59,7 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+    </div>
 
 </section>
 {{--  --}}

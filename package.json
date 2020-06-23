@@ -13,6 +13,7 @@
         "m0": "composer dumpautoload && php artisan migrate:refresh --seed && npm run b",
         "m": "php artisan migrate:refresh --seed && npm run b",
         "b": " php artisan serve --host=localhost --port=8000",
+        "b2": " php artisan serve --host=192.168.1.103 --port=8000",
         "f-p": "cd angular && ng build --prod",
         "copy": "node ./moveFile.js",
         "p": "npm run f-p && npm run copy",

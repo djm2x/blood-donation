@@ -27,7 +27,7 @@
 
 <body style="{{ app()->getLocale() == 'fr' ? 'direction: ltr' : 'direction: rtl' }}">
     <div id="haut">Bonjour</div>
-    <header id="entete" style="position: fixed; top: 0;z-index: 99999 !important;">
+    <header id="entete" style="position: fixed; top: 0;z-index: 20 !important;">
         @include('navone')
     </header>
 
@@ -61,6 +61,14 @@
     <footer>
         @include('footer')
     </footer>
+
+    <div class="sociel">
+        <a><i class="fab fa-facebook-square"></i></a>
+        <a><i class="fab fa-twitter-square"></i></a>
+        <a><i class="fab fa-instagram-square"></i></a>
+        <a><i class="fab fa-youtube-square"></i></a>
+
+    </div>
 
     <a id="btn" class="d-flex justify-content-center align-items-center"><i class="fas fa-arrow-up text-white"></i></a>
 
