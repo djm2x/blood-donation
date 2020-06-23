@@ -18,6 +18,7 @@ class PresidentController extends SuperController
         return view('page/president', compact('model'));
     }
 
+
     public function page(string $article) // : Collection
     {
         // if (!view()->exists("page/{$article}")) {

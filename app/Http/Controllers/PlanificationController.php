@@ -12,6 +12,13 @@ class PlanificationController extends SuperController
         parent::__construct($model);
     }
 
+
+    public function state()
+    {
+        $list = $this->_context->select('id', 'title')->groupBy('c.table_name')->get();
+        return compact('list');
+    }
+
     public function getAll(int $startIndex, int $pageSize, string $sortBy, string $sortDir) // : Collection
     {
         $list = $this->_context

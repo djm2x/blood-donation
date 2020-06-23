@@ -22,6 +22,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::namespace('Api')->group(function () {
 });
 
+// teste state
+Route::get('/state/one', 'PlanificationController@state');
+
 // testApi
 Route::get('/home/list', 'HomeController@testApi');
 
