@@ -64,9 +64,9 @@
 </section>
 {{--  --}}
 <section class="second ">
-    <div class="container flex-column d-flex justify-content-center align-items-center">
+    <div class="container">
 
-        <div class="para anime d-flex flex-column align-items-center mt-5  mb-2">
+        {{-- <div class="para anime d-flex flex-column align-items-center mt-5  mb-2">
             <p class="text-danger h2 font-weight-bold mb-4 mt-4">Promesse de don</p>
             <div class="progress mb-4">
                 <div class="progress-bar bg-danger" role="progressbar"  aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
@@ -75,42 +75,86 @@
                 Pour recueillir les promesses de dons, le Center a créé un numéro d’appel, le 00 00. Dans les jours qui suivent votre appel, vous recevrez par courrier votre promesse de don qu'il vous
                 suffira de retourner avec votre chèque dans l'enveloppe affranchie jointe.
             </p>
+        </div> --}}
+        <div class="row">
+            <div class="col-md-6 pl-0 pr-0">
+                <div class="background-gray">
+
+                </div>
+            </div>
+
+            <div class="col-md-6 pr-0">
+                <div class="row anime ">
+                    <div class="col-md-6 col-sm-6 col-lg-6 d-flex justify-content-center pr-1">
+                        <div class="mycard d-flex justify-content-between align-items-center">
+
+                            <img class="m-2" src="images/001-blood-1.png" alt="" srcset="">
+                            <div class="txt">
+                                <p>Meteo du sang</p>
+                                {{-- <p>
+                                    Un don qui sauve des vies
+                                    ,Une action généreuse, altruiste
+                                    ,Une responsabilité citoyenne
+                                    ,Une nécessité pour maintenir notre  réserve collective de sang
+                                </p> --}}
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-6 col-sm-6 col-lg-6 d-flex justify-content-center pl-1">
+                        <div class="mycard d-flex justify-content-between align-items-center">
+
+                            <img class="m-2" src="images/002-blood-donation.png" alt="" srcset="">
+                            <div class="txt">
+                                <p>Ou Donneur votre sang?</p>
+                                {{-- <p>
+                                    Les donneurs sont attendus tout l’été dans les nombreuses collectes mobiles organisées partout en Maroc.
+                                </p> --}}
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6 d-flex justify-content-center pr-1">
+                        <div class="mycard d-flex justify-content-between align-items-center">
+
+                            <img class="m-2" src="images/002-blood-donation.png" alt="" srcset="">
+                            <div class="txt">
+                                <p>Pourquoi donner du sang?</p>
+                                {{-- <p>
+                                    Les donneurs sont attendus tout l’été dans les nombreuses collectes mobiles organisées partout en Maroc.
+                                </p> --}}
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6 d-flex justify-content-center pl-1">
+                        <div class="mycard d-flex justify-content-between align-items-center">
+
+                            <img class="m-2" src="images/003-blood.png" alt="" srcset="">
+                            <div class="txt">
+                                <p>Collecte Mobile</p>
+                                {{-- <p>
+                                    Fournir avec efficience des composants et substituts sanguins, des tissus humains et du sang de cordon sécuritaires, de qualité optimale et en quantité suffisante, pour répondre aux besoins de la population Marocaine.
+                                </p> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-column d-flex justify-content-center align-items-center mymap mt-1">
+            
+                    <div class="anime d-flex flex-column align-items-center mt-2 mb-2">
+                        <p class="text-danger h2 font-weight-bold text-center">Don du sang</p>
+                        <p class="col-md-12 text-center"> <span><img src="images/position.png" style="width: 30px; font-size: .8em"  alt=""></span>  Clique sur la map pour localiser nos campagnes de don du sang</p>
+                        <a href="{{ route('planification') }}">
+                            <img src="images/maps-and-flags.png"  style="height: 300px">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="row anime d-flex justify-content-center mt-5 mb-5">
-            <div class="col-md-6 col-sm-6 col-lg-4 d-flex justify-content-center p-2">
-                <img class="m-2" src="images/001-blood-1.png" alt="" srcset="">
-                <div class="txt">
-                    <p>Meteo du sang</p>
-                    <p>
-                        Un don qui sauve des vies
-                        ,Une action généreuse, altruiste
-                        ,Une responsabilité citoyenne
-                        ,Une nécessité pour maintenir notre  réserve collective de sang
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-sm-6 col-lg-4 d-flex justify-content-center p-2">
-                <img class="m-2" src="images/002-blood-donation.png" alt="" srcset="">
-                <div class="txt">
-                    <p>Ou Donneur votre sang?</p>
-                    <p>
-                        Les donneurs sont attendus tout l’été dans les nombreuses collectes mobiles organisées partout en Maroc.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-sm-6 col-lg-4 d-flex justify-content-center p-2">
-                <img class="m-2" src="images/003-blood.png" alt="" srcset="">
-                <div class="txt">
-                    <p>Collecte Mobile</p>
-                    <p>
-                        Fournir avec efficience des composants et substituts sanguins, des tissus humains et du sang de cordon sécuritaires, de qualité optimale et en quantité suffisante, pour répondre aux besoins de la population Marocaine.
-                    </p>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </section>
 {{--  --}}
@@ -190,11 +234,10 @@
       </div>
 
 </section>
-@endif
 {{--  --}}
 <section class="fourth ">
     <div class="container flex-column d-flex justify-content-center align-items-center">
-
+        
         <div class="anime d-flex flex-column align-items-center mt-5 mb-5">
             <p class="text-danger h2 font-weight-bold text-center">Don du sang</p>
             <p class="col-md-8 text-center"> <span><img src="images/position.png" style="width: 30px"  alt=""></span>  Clique sur la map pour localiser nos campagnes de don du sang</p>
@@ -204,6 +247,7 @@
         </div>
     </div>
 </section>
+@endif
 
 {{--  --}}
 @if (false)
