@@ -35,9 +35,9 @@
     <main class="main">
         <div class="{{ request()->is('/') ? '' : 'container' }}">
             <div class="row">
-                <div class="{{ request()->is('/') || strpos(Request::path(), 'actualites') === 0 ? (strpos(Request::path(), 'actualites') === 0 ? 'col-md-12 p-1 mt-1' : 'col-md-12') : 'col-sm-12 col-md-8 p-1 mt-1' }}">
+                <div class="{{ request()->is('/') || strpos(Request::path(), 'actualite') === 0 ? (strpos(Request::path(), 'actualite') === 0 ? 'col-md-8 p-1 mt-1' : 'col-md-12') : 'col-sm-12 col-md-8 p-1 mt-1' }}">
                     @include('title')
-                    {{-- {{strpos(Request::path(), 'actualites')}}   class="{{ request()->is('/') ? 'm-0' : 'ml-2 mr-2' }}"--}}
+                    {{-- {{strpos(Request::path(), 'actualite')}}   class="{{ request()->is('/') ? 'm-0' : 'ml-2 mr-2' }}"--}}
                     <div  class="{{ request()->is('/') ? '' : 'card' }}" style="border-radius: 0">
                         <article  class="{{ request()->is('/') ? 'm-0' : 'ml-2 mr-2' }}">
                             @yield('content')
@@ -46,7 +46,8 @@
                 </div>
 
                 <div class="col-sm-12 col-md-4 mt-1 p-1">
-                    @if (!request()->is('/') && strpos(Request::path(), 'actualites') === false)
+                    {{-- && strpos(Request::path(), 'actualite') === false --}}
+                    @if (!request()->is('/'))
                         @include('sidenav')
                     @endif
                 </div>

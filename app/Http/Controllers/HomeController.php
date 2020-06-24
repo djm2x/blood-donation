@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Actualite;
 use Illuminate\Http\Request;
 use App\galerie;
+use Illuminate\Support\Facades\DB;
+
 class HomeController extends SuperController
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+    protected  $actualite;
 
-    public function __construct(galerie $model)
+    public function __construct(galerie $model, Actualite $actualite)
     {
         parent::__construct($model);
+        $this->actualite = $actualite;
     }
 
     /**
@@ -47,7 +47,10 @@ class HomeController extends SuperController
             }
         }
 
+        // actualite
+        $actualites = $this->actualite->orderBy('date', 'desc')->skip(0)->take(3)->get();
+
         // dd($groupes);
-        return view('page/home', compact('groupes'));
+        return view('page/home', compact('groupes', 'actualites'));
     }
 }

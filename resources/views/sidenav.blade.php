@@ -36,29 +36,31 @@
         </video>
     </div>
 
-    <div class="card mb-2">
-        <div class="card-title">
-            <h5><a href="/actualites">@lang('menu.Actualite')</a></h5>
-        </div>
-        <div class="card-body">
-            <div class="d-flex flex-column" id="news" class="row">
-                
+
+        <div class="card mb-2">
+            <div class="card-title">
+                <h5><a href="/actualite">@lang('menu.Actualite')</a></h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex flex-column" id="news" class="row">
+
+                </div>
             </div>
         </div>
-    </div>
+
 
 
     <div class="card mb-2" style="height: 45vh;">
         <div class="card-title">
-            <h5><a href="/actualites">Test</a></h5>
+            <h5><a href="/actualite">Test</a></h5>
         </div>
         <div class="card-body">
-            <div class="d-flex flex-column" id="news" class="row">
-                
+            <div class="d-flex flex-column" id="test" class="row">
+
             </div>
         </div>
     </div>
-    
+
 </section>
 @section('scripts-sidenav')
 <script>
@@ -75,12 +77,12 @@
 
         async function getPage() {
             get(`#news`).innerHTML = spinner2;
+            // console.log('side>>>')
 
             try {
                 const r = await axios.get(`/api/actualites/news/5`);
                 const list = r.data.list;
 
-                // console.log('fouter>>>')
                 // console.log(r)
                 // console.log('fouter<<<<')
 
@@ -98,7 +100,7 @@
 
             }
         }
-                                                            
+
         /**
          * @param {date: Date, titre: string}[] data
          * @returns {void}
@@ -111,7 +113,7 @@
                         <p class="text-muted m-0" style="font-size: .9em">
                             <i class="far fa-calendar-alt"></i> ${dateFormat(new Date(e.date))}
                         </p>
-                        <a href="/actualites/${e.id}" class="text-dark">
+                        <a href="/actualite/${e.id}" class="text-dark">
                             <p style="font-size: 1.1em" class=" m-0">${e.title}</p>
                         </a>
                     </div>
@@ -142,7 +144,7 @@
          */
         function get(selector) {
             return document.querySelector(selector)
-        }   
+        }
     // const spinner = `<div class="spinner-border text-success m-5" role="status">
     //                     <span class="sr-only">Loading...</span>
     //                 </div>`;

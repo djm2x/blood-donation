@@ -56,7 +56,7 @@ class ActualiteController extends SuperController
         // get blog of one type
         $q = $this->_context;//->where('type', 'LIKE', "%{$type}%");
 
-       
+
 
         // filter blogs by years
         // if ($year != 0) {
@@ -83,7 +83,7 @@ class ActualiteController extends SuperController
         $count = $q->count();
 
         $list = $q->orderBy('date', 'desc')->skip(0)->take(6)->get();
-        
+
         $years = $q->select(DB::raw($rawSql))->get();
 
         return view("page/actualite", compact('list', 'years', 'count'));

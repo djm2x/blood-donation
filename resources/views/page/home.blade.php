@@ -23,8 +23,8 @@
             <img style="filter: brightness(70%);" src="images/dds01.png" class="d-block w-100" alt="...">
 
             <div class="carousel-caption d-none d-md-block">
-              <h1>ON EST PLUS QU'AMIS</h1>
-              <h5>On est donneurs de song</h5>
+              {{-- <h1>ON EST PLUS QU'AMIS</h1>
+              <h5>On est donneurs de song</h5> --}}
 
               {{-- <a class="btn btn-primary mt-5 " href="http://">REJOIGNEZ-NOUS SUR FACEBOOK</a> --}}
             </div>
@@ -33,8 +33,8 @@
             <img style="filter: brightness(70%);" src="images/dds02.png" class="d-block w-100" alt="...">
 
             <div class="carousel-caption d-none d-md-block">
-              <h1>ON EST PLUS QU'AMIS</h1>
-              <h5>On est donneurs de song</h5>
+              {{-- <h1>ON EST PLUS QU'AMIS</h1>
+              <h5>On est donneurs de song</h5> --}}
 
               {{-- <a class="btn btn-primary mt-5" href="http://">REJOIGNEZ-NOUS SUR FACEBOOK</a> --}}
             </div>
@@ -79,7 +79,32 @@
         <div class="row">
             <div class="col-md-6 pl-0 pr-0">
                 <div class="background-gray">
+                    <div class="d-flex justify-content-center align-items-center flex-wrap p-2 w-100">
+                        <div class="col-md-12  mt-1">
+                        <h3 style="margin-bottom: 10px">DERNIÈRES ACTUALITÉS</h3>
+                        @foreach($actualites as $e)
+                            <div class="row">
+                                <div class="col-md-4 pr-0">
+                                    <a href="{{url('actualite/'.$e->id)}}">
+                                        <img src="{{url('actualites/'.str_replace(';', '', $e->imageUrl))}}" onerror="this.onerror=null;this.src='/images/404.png';" class="w-100" style="height: 150px;">
+                                    </a>
+                                </div>
+                                <div class="col-md-8 d-flex justify-content-between flex-column ">
+                                    <p class="m-0" style="font-size: 1.1em; font-weight: 700;"><a style=" color: black;" href="{{url('actualite/'.$e->id)}}">{{$e->title}}</a></p>
+                                    <p class="text-muted" style="font-size: 1.1em"><i class="far fa-calendar-alt"></i> {{date('d/m/Y', strtotime($e->date))}}</p>
+                                    <p style="font-size: .9rem">{{substr(strip_tags($e->description),0,150)}} ...</p>
+                                    {{-- <div class="d-flex flex-row-reverse mt-5 mt-auto">
+                                        <a class="btn btn-danger mybtn text-uppercase" href="{{url('actualite/'.$e->id)}}   ">
+                                            <span style="font-size: 1.1em;">plus d'info...</span>
+                                        </a>
+                                    </div> --}}
+                                </div>
+                            </div>
 
+                            <hr style="margin: 5px 0 10px">
+                        @endforeach
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -100,7 +125,7 @@
                             </div>
                         </div>
                     </div>
-        
+
                     <div class="col-md-6 col-sm-6 col-lg-6 d-flex justify-content-center pl-1">
                         <div class="mycard d-flex justify-content-between align-items-center">
 
@@ -112,7 +137,7 @@
                                 </p> --}}
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-6 col-sm-6 col-lg-6 d-flex justify-content-center pr-1">
                         <div class="mycard d-flex justify-content-between align-items-center">
@@ -125,12 +150,12 @@
                                 </p> --}}
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-6 col-sm-6 col-lg-6 d-flex justify-content-center pl-1">
                         <div class="mycard d-flex justify-content-between align-items-center">
 
-                            <img class="m-2" src="images/003-blood.png" alt="" srcset="">
+                            <img class="m-2" src="images/camion.png" alt="" srcset="">
                             <div class="txt">
                                 <p>Collecte Mobile</p>
                                 {{-- <p>
@@ -142,10 +167,10 @@
                 </div>
 
                 <div class="flex-column d-flex justify-content-center align-items-center mymap mt-1">
-            
+
                     <div class="anime d-flex flex-column align-items-center mt-2 mb-2">
                         <p class="text-danger h2 font-weight-bold text-center">Don du sang</p>
-                        <p class="col-md-12 text-center"> <span><img src="images/position.png" style="width: 30px; font-size: .8em"  alt=""></span>  Clique sur la map pour localiser nos campagnes de don du sang</p>
+                        <p class="col-md-12 text-center"> <span><img src="images/position.png" style="width: 30px;"  alt=""></span>Clique sur la map pour localiser nos campagnes de don du sang</p>
                         <a href="{{ route('planification') }}">
                             <img src="images/maps-and-flags.png"  style="height: 300px">
                         </a>
@@ -154,7 +179,7 @@
             </div>
         </div>
 
-        
+
     </div>
 </section>
 {{--  --}}
@@ -237,7 +262,7 @@
 {{--  --}}
 <section class="fourth ">
     <div class="container flex-column d-flex justify-content-center align-items-center">
-        
+
         <div class="anime d-flex flex-column align-items-center mt-5 mb-5">
             <p class="text-danger h2 font-weight-bold text-center">Don du sang</p>
             <p class="col-md-8 text-center"> <span><img src="images/position.png" style="width: 30px"  alt=""></span>  Clique sur la map pour localiser nos campagnes de don du sang</p>

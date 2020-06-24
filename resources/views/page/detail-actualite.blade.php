@@ -5,7 +5,7 @@
 
 
 @section('title')
-<a href="/actualites" class="text-dark">
+<a href="/actualite" class="text-dark">
     @lang('menu.Actualite')
 </a>
 @stop
@@ -13,7 +13,7 @@
 @section('content')
 <section class="president">
     <div class="container mt-3 mb-5">
-        
+
         <div class="d-flex flex-wrap align-items-center">
             <div class="col-md-12">
                 <p class="m-0" style="font-size: 1.1em; font-weight: 700">{{$model->title}}</p>

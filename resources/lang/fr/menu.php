@@ -4,7 +4,7 @@ return [
 
     'Accueil' => 'Accueil',
     'cntsh' => 'c n t s h',
-    'Diagramme' => 'Diagramme',
+    'Diagramme' => 'Organigramme',
     'Missions' => 'Missions',
     'Motdudirecteur' => 'Mot du directeur',
     'Reseaunational' => 'Réseau national',
@@ -40,5 +40,5 @@ return [
     'Galerie' => 'Galerie',
     'Contact' => 'Contact',
     //
-    'Recherche' => 'Recherche', 
+    'Recherche' => 'Recherche',
 ];

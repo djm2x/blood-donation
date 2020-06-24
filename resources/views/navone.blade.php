@@ -57,7 +57,7 @@
 </section>
 
 <section class="navthree  d-none d-md-block">
-    <div class="container">
+    <div class="container  p-0">
         <nav class="navbar navbar-expand-lg">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars" style="color:white"></i>
@@ -86,7 +86,7 @@
 
     function growShrinkNav() {
         const scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-        
+
         if (size == 0 && scroll > endOfDocumentTop) {
             // nav.className = 'hide-nav';
             console.log('toBottom')
