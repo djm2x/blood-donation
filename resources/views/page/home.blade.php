@@ -81,7 +81,7 @@
                 <div class="background-gray">
                     <div class="d-flex justify-content-center align-items-center flex-wrap p-2 w-100">
                         <div class="col-md-12  mt-1">
-                        <h3 style="margin-bottom: 10px">DERNIÈRES ACTUALITÉS</h3>
+                        <h4 style="margin-bottom: 10px;">DERNIÈRES ACTUALITÉS</h4>
                         @foreach($actualites as $e)
                             <div class="row">
                                 <div class="col-md-4 pr-0">
@@ -103,6 +103,10 @@
 
                             <hr style="margin: 5px 0 10px">
                         @endforeach
+
+                    </div>
+                        <div class="d-flex justify-content-between align-items-center w-100">
+                            <a style="margin: 0 auto; width: 100%; text-align: center;" href="/actualite">Toute l'actualité</a>
                         </div>
                     </div>
                 </div>
