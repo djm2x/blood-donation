@@ -20,7 +20,7 @@
         </ol>
         <div class="carousel-inner ">
           <div class="carousel-item active">
-            <img style="filter: brightness(70%);" src="images/dds01.png" class="d-block w-100" alt="...">
+            <img style="filter: brightness(70%);" src="images/one.jpg" class="d-block w-100" alt="...">
 
             <div class="carousel-caption d-none d-md-block">
               {{-- <h1>ON EST PLUS QU'AMIS</h1>
