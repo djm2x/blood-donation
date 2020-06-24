@@ -402,18 +402,91 @@
 @endif
 {{--  --}}
 <section class="temoignage ">
-    <div class="container flex-column d-flex justify-content-center align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-lg-4 col-12 anime">
+                <p class="font-weight-bold text-center text-uppercase pt-3 mb-2">La presse en parle</p>
+                <div class="mycard2">
+                    <img src="images/404.png"  alt="">
+                    <section>
+                        <span>Le 20/12/2019</span>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </section>
+                </div>
+                <div class="mycard2">
+                    <img src="images/404.png"  alt="">
+                    <section>
+                        <span>Le 20/12/2019</span>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </section>
+                </div>
+                <div class="mycard2">
+                    <img src="images/404.png"  alt="">
+                    <section>
+                        <span>Le 20/12/2019</span>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </section>
+                </div>
+                <div class="mycard2">
+                    <img src="images/404.png"  alt="">
+                    <section>
+                        <span>Le 20/12/2019</span>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </section>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-4 col-12">
+                {{-- <p class="text-danger h2 font-weight-bold text-center text-uppercase pt-3">témoignages</p> --}}
+                <p class="font-weight-bold text-center text-uppercase pt-3   mb-2">témoignages</p>
+                <div class="anime row">
+                    {{-- <p class="col-md-8 text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam, incidunt nisi! Cum sequi quibusdam quia similique, laboriosam quidem eum nisi, ducimus accusantium, perferendis id sint odio hic animi expedita quos?</p> --}}
+        
+                    <div class="col-md-6 col-sm-6">
+                        <div class="mycard">
+                            <img src="images/user.png"  alt="">
+                            <p class="font-weight-bold m-0 mt-2">walid <span class="text-uppercase">bennani</span></p>
+                            <p class="text-capitalize m-0">entrepreneur degital</p>
+                        </div>
+                    </div>
 
-        <div class="anime d-flex flex-column align-items-center mt-5 mb-5">
-            <p class="text-danger h2 font-weight-bold text-center text-uppercase">témoignages</p>
-            <p class="col-md-8 text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam, incidunt nisi! Cum sequi quibusdam quia similique, laboriosam quidem eum nisi, ducimus accusantium, perferendis id sint odio hic animi expedita quos?</p>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="mycard">
+                            <img src="images/user.png"  alt="">
+                            <p class="font-weight-bold m-0 mt-2">Youssef <span class="text-uppercase">khaldoun</span></p>
+                            <p class="text-capitalize m-0">developpeur web</p>
+                        </div>
+                    </div>
 
-            <div class="d-flex flex-column justify-content-center align-items-center">
-                <img src="images/user.png"  alt="">
-                <p class="font-weight-bold m-0 mt-2">walid <span class="text-uppercase">bennani</span></p>
-                <p class="text-capitalize m-0">entrepreneur degital</p>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="mycard">
+                            <img src="images/user.png"  alt="">
+                            <p class="font-weight-bold m-0 mt-2">Omar <span class="text-uppercase">zarhouni</span></p>
+                            <p class="text-capitalize m-0">designer</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                        <div class="mycard">
+                            <img src="images/user.png"  alt="">
+                            <p class="font-weight-bold m-0 mt-2">Anas <span class="text-uppercase">sabour</span></p>
+                            <p class="text-capitalize m-0">entrepreneur</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-4 col-12 mt-5 mb-3">
+                <div class="mycard">
+
+                    <video  width="100%"  controls >
+                        <source src="{{ asset('videos/spot_publicitaire.mp4') }}" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    </div>
             </div>
         </div>
+        
     </div>
 </section>
 
